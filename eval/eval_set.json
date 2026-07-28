@@ -1,0 +1,802 @@
+[
+  {
+    "eval_id": 0,
+    "question": "What property of attention is enabled by the fact that W^Q and W^K are different matrices?",
+    "expected_chunk_id": "transformer_deep_learning_architecture::85",
+    "expected_doc_id": "transformer_deep_learning_architecture",
+    "source_text": "ich stabilizes gradients during training, and passed through a softmax which normalizes the weights. The fact that W Q {\\displaystyle W^{Q}} and W K {\\displaystyle W^{K}} are different matrices allows attention to be non-symmetric: if token i {\\displaystyle i} attends to token j {\\displaystyle j} (i.e. q i \u22c5 k j {\\displaystyle q_{i}\\cdot k_{j}} is large), this does not necessarily mean that token j {\\displaystyle j} will attend to token i {\\displaystyle i} (i.e.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 1,
+    "question": "In what year was the artificial curiosity principle used in generative adversarial networks?",
+    "expected_chunk_id": "deep_learning::40",
+    "expected_doc_id": "deep_learning",
+    "source_text": "ith each other in the form of a zero-sum game, where one network's gain is the other network's loss. The first network is a generative model that models a probability distribution over output patterns. The second network learns by gradient descent to predict the reactions of the environment to these patterns. This was called \"artificial curiosity\". In 2014, this principle was used in generative adversarial networks (GANs).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 2,
+    "question": "In the risk management application described, at what point in the process is VaR calculated when applying PCA to Monte Carlo simulation?",
+    "expected_chunk_id": "principal_component_analysis::155",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "fine a set of components or factors that explain rate movements, thereby facilitating the modelling. One common risk management application is to calculating value at risk, VaR, applying PCA to the Monte Carlo simulation. Here, for each simulation-sample, the components are stressed, and rates, and in turn option values, are then reconstructed; with VaR calculated, finally, over the entire run.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 3,
+    "question": "What is the name of the objective function used in k-means clustering?",
+    "expected_chunk_id": "k-means_clustering::18",
+    "expected_doc_id": "k-means_clustering",
+    "source_text": "o exactly one S ( t ) {\\displaystyle S^{(t)}} , even if it could be assigned to two or more of them. Update step: Recalculate means (centroids) for observations assigned to each cluster. This is also called refitting. m i ( t + 1 ) = 1 | S i ( t ) | \u2211 x j \u2208 S i ( t ) x j {\\displaystyle m_{i}^{(t+1)}={\\frac {1}{\\left|S_{i}^{(t)}\\right|}}\\sum _{x_{j}\\in S_{i}^{(t)}}x_{j}} The objective function in k-means is the WCSS (within cluster sum of squares).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 4,
+    "question": "In the random forest weight function formula, what mathematical constraint must the weights for points x\u1d62 satisfy for any given x'?",
+    "expected_chunk_id": "random_forest::40",
+    "expected_doc_id": "random_forest",
+    "source_text": "neighborhood\" of the point, formalized by a weight function W: y ^ = \u2211 i = 1 n W ( x i , x \u2032 ) y i . {\\displaystyle {\\hat {y}}=\\sum _{i=1}^{n}W(x_{i},x')\\,y_{i}.} Here, W ( x i , x \u2032 ) {\\displaystyle W(x_{i},x')} is the non-negative weight of the i'th training point relative to the new point x' in the same tree. For any x', the weights for points x i {\\displaystyle x_{i}} must sum to 1.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 5,
+    "question": "What does the man do while on the exercise ball and talking according to the passage?",
+    "expected_chunk_id": "large_language_model::107",
+    "expected_doc_id": "large_language_model",
+    "source_text": "g problems are trivial for humans but defeated LLMs. Sample questions: We see a fitness center sign. We then see a man talking to the camera and sitting and laying on a exercise ball. The man... demonstrates how to increase efficient exercise work by running up and down balls. moves all his arms and legs and builds up a lot of muscle. then plays the ball and we see a graphics and hedge trimming demonstration. performs sit ups while on the ball and talking.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 6,
+    "question": "What are the three common groupings of modern transformer designs based on their optimization?",
+    "expected_chunk_id": "transformer_deep_learning_architecture::3",
+    "expected_doc_id": "transformer_deep_learning_architecture",
+    "source_text": "ining time than earlier recurrent neural architectures (RNNs) such as long short-term memory (LSTM). Later variations have been widely adopted for training large language models (LLMs) on large (language) datasets. Modern transformer designs are commonly grouped into encoder-only, decoder-only, and encoder-decoder variants, depending on whether they are optimized for representation learning, autoregressive generation, or conditional sequence-to-sequence tasks.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 7,
+    "question": "In what domain does the unsupervised CNN model with 1-D convolutions detect anomalies after processing time series in the frequency domain using spectral residual?",
+    "expected_chunk_id": "convolutional_neural_network::169",
+    "expected_doc_id": "convolutional_neural_network",
+    "source_text": "increasing throughput for studies of individual variation, social networks, and collective dynamics. Anomaly detection A CNN with 1-D convolutions was used on time series in the frequency domain (spectral residual) by an unsupervised model to detect anomalies in the time domain. Drug discovery CNNs have been used in drug discovery. Predicting the interaction between molecules and biological proteins can identify potential treatments.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 8,
+    "question": "What does the relationship between the error term and the regressors determine in formulating a linear regression model?",
+    "expected_chunk_id": "linear_regression::28",
+    "expected_doc_id": "linear_regression",
+    "source_text": "ble captures all other factors which influence the dependent variable y other than the regressors x. The relationship between the error term and the regressors, for example their correlation, is a crucial consideration in formulating a linear regression model, as it will determine the appropriate estimation method.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 9,
+    "question": "What is the approximate duration in milliseconds that one time step corresponds to in LSTM RNN speech recognition tasks?",
+    "expected_chunk_id": "deep_learning::99",
+    "expected_doc_id": "deep_learning",
+    "source_text": "cale automatic speech recognition is the first and most convincing successful case of deep learning. LSTM RNNs can learn \"Very Deep Learning\" tasks that involve multi-second intervals containing speech events separated by thousands of discrete time steps, where one time step corresponds to about 10 ms. LSTM with forget gates is competitive with traditional speech recognizers on certain tasks. The initial success in speech recognition was based on small-scale recognition tasks based on TIMIT.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 10,
+    "question": "What range of values does the output fall between when the weights and inputs are multiplied in a DNN?",
+    "expected_chunk_id": "deep_learning::82",
+    "expected_doc_id": "deep_learning",
+    "source_text": "dforward networks in which data flows from the input layer to the output layer without looping back. At first, the DNN creates a map of virtual neurons and assigns random numerical values, or \"weights\", to connections between them. The weights and inputs are multiplied and return an output between 0 and 1. If the network did not accurately recognize a particular pattern, an algorithm would adjust the weights.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 11,
+    "question": "In a fully recurrent neural network, what method is used to simulate the lack of connections between neurons?",
+    "expected_chunk_id": "recurrent_neural_network::33",
+    "expected_doc_id": "recurrent_neural_network",
+    "source_text": "laystyle h_{i,j-1},c_{i,j-1}} . The other processes it from the top-right corner to the bottom-left. Architectures Fully recurrent Fully recurrent neural networks (FRNN) connect the outputs of all neurons to the inputs of all neurons. In other words, it is a fully connected network. This is the most general neural network topology, because all other topologies can be represented by setting some connection weights to zero to simulate the lack of connections between those neurons.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 12,
+    "question": "What does a random forest output for regression tasks according to this passage?",
+    "expected_chunk_id": "random_forest::0",
+    "expected_doc_id": "random_forest",
+    "source_text": "Random forests or random decision forests is an ensemble learning method for classification, regression and other tasks that works by creating a multitude of decision trees during training. For classification tasks, the output of the random forest is the class selected by most trees. For regression tasks, the output is the average of the predictions of the trees. Random forests correct for decision trees' habit of overfitting to their training set.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 13,
+    "question": "Who originally proposed the kernel trick that is applied to maximum-margin hyperplanes in support vector machines?",
+    "expected_chunk_id": "support_vector_machine::43",
+    "expected_doc_id": "support_vector_machine",
+    "source_text": "by applying the kernel trick (originally proposed by Aizerman et al.) to maximum-margin hyperplanes. The kernel trick, where dot products are replaced by kernels, is easily derived in the dual representation of the SVM problem. This allows the algorithm to fit the maximum-margin hyperplane in a transformed feature space.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 14,
+    "question": "What is the ISBN number of the Computer Vision book authored by Pedram Azad, Tilo Gockel, and R\u00fcdiger Dillmann?",
+    "expected_chunk_id": "computer_vision::118",
+    "expected_doc_id": "computer_vision",
+    "source_text": "07). Digital Image Processing: An Algorithmic Approach Using Java. Springer. ISBN 978-1-84628-379-6. Archived from the original on 2014-05-17. Retrieved 2007-06-13. Pedram Azad; Tilo Gockel; R\u00fcdiger Dillmann (2008). Computer Vision \u2013 Principles and Practice. Elektor International Media BV. ISBN 978-0-905705-71-2. Richard Szeliski (2010). Computer Vision: Algorithms and Applications. Springer-Verlag. ISBN 978-1-84882-934-3. J. R. Parker (2011).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 15,
+    "question": "What time period did the analysis contrasting GMM and other generative speech models versus deep learning systems take place?",
+    "expected_chunk_id": "deep_learning::55",
+    "expected_doc_id": "deep_learning",
+    "source_text": "re model (GMM)/Hidden Markov Model (HMM) and also than more-advanced generative model-based systems. The nature of the recognition errors produced by the two types of systems was characteristically different, offering technical insights into how to integrate deep learning into the existing highly efficient, run-time speech decoding system deployed by all major speech recognition systems. Analysis around 2009\u20132010, contrasting the GMM (and other generative speech models) vs.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 16,
+    "question": "In the regularization derivation shown, what condition is described by the third statement in the sequence of equations?",
+    "expected_chunk_id": "regularization_mathematics::27",
+    "expected_doc_id": "regularization_mathematics",
+    "source_text": "w} is the one for which the gradient of the loss function with respect to w {\\displaystyle w} is 0. min w 1 n ( X ^ w \u2212 Y ) T ( X ^ w \u2212 Y ) + \u03bb \u2016 w \u2016 2 2 {\\displaystyle \\min _{w}{\\frac {1}{n}}\\left({\\hat {X}}w-Y\\right)^{\\mathsf {T}}\\left({\\hat {X}}w-Y\\right)+\\lambda \\left\\|w\\right\\|_{2}^{2}} \u2207 w = 2 n X ^ T ( X ^ w \u2212 Y ) + 2 \u03bb w {\\displaystyle \\nabla _{w}={\\frac {2}{n}}{\\hat {X}}^{\\mathsf {T}}\\left({\\hat {X}}w-Y\\right)+2\\lambda w} 0 = X ^ T ( X ^ w \u2212 Y ) + n \u03bb w {\\displaystyle 0={\\hat {X}}^{\\mathsf {T}}\\left({\\hat {X}}w-Y\\right)+n\\lambda w} w = ( X ^ T X ^ + \u03bb n I ) \u2212 1 ( X ^ T Y ) {\\displaystyle w=\\left({\\hat {X}}^{\\mathsf {T}}{\\hat {X}}+\\lambda nI\\right)^{-1}\\left({\\hat {X}}^{\\mathsf {T}}Y\\right)} where the third statement is a first-order condition.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 17,
+    "question": "According to the passage, what are the two reasons why linear regression analysis can be studied rigorously and used extensively in practical applications?",
+    "expected_chunk_id": "linear_regression::5",
+    "expected_doc_id": "linear_regression",
+    "source_text": "regression analysis to be studied rigorously, and to be used extensively in practical applications. This is because models which depend linearly on their unknown parameters are easier to fit than models which are non-linearly related to their parameters and because the statistical properties of the resulting estimators are easier to determine. Linear regression has many practical uses. Most applications fall into one of the following two broad categories: If the goal is to reduce error, i.e.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 18,
+    "question": "How does random forests make predictions for unseen samples when using regression trees according to the bagging technique?",
+    "expected_chunk_id": "random_forest::15",
+    "expected_doc_id": "random_forest",
+    "source_text": "random forests applies the general technique of bootstrap aggregating, or bagging, to tree learners. Given a training set X = x1, ..., xn with responses Y = y1, ..., yn, bagging repeatedly (B times) selects a random sample with replacement of the training set and fits trees to these samples: After training, predictions for unseen samples x' can be made by averaging the predictions from all the individual regression trees on x': f ^ = 1 B \u2211 b = 1 B f b ( x \u2032 ) {\\displaystyle {\\hat {f}}={\\frac {1}{B}}\\sum _{b=1}^{B}f_{b}(x')} or by taking the plurality vote in the case of classification trees.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 19,
+    "question": "In the equation for bounded critical points, what matrix must be inverted when expressing w tilde star in terms of g star and u?",
+    "expected_chunk_id": "batch_normalization::70",
+    "expected_doc_id": "batch_normalization",
+    "source_text": ") {\\displaystyle \\phi ^{(i)}} is the i {\\displaystyle i} -th derivative of \u03d5 {\\displaystyle \\phi } . By setting the gradient to 0, it thus follows that the bounded critical points w ~ \u2217 {\\displaystyle {\\tilde {w}}_{*}} can be expressed as w ~ \u2217 = g \u2217 S \u2212 1 u {\\displaystyle {\\tilde {w}}_{*}=g_{*}S^{-1}u} , where g \u2217 {\\displaystyle g_{*}} depends on w ~ \u2217 {\\displaystyle {\\tilde {w}}_{*}} and \u03d5 {\\displaystyle \\phi } .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 20,
+    "question": "In the residual fractional eigenvalue plots for PCA, what does a flat plateau indicate before the curves drop quickly?",
+    "expected_chunk_id": "principal_component_analysis::181",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "analyzing empirical data. For NMF, its components are ranked based only on the empirical FRV curves. The residual fractional eigenvalue plots, that is, 1 \u2212 \u2211 i = 1 k \u03bb i / \u2211 j = 1 n \u03bb j {\\displaystyle 1-\\sum _{i=1}^{k}\\lambda _{i}{\\Big /}\\sum _{j=1}^{n}\\lambda _{j}} as a function of component number k {\\displaystyle k} given a total of n {\\displaystyle n} components, for PCA have a flat plateau, where no data are captured to remove the quasi-static noise, then the curves drop quickly as an indication of over-fitting (random noise).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 21,
+    "question": "How does the CAA self-learning algorithm compute decisions about actions and emotions?",
+    "expected_chunk_id": "machine_learning::57",
+    "expected_doc_id": "machine_learning",
+    "source_text": "ucing emotion as an internal reward. Emotion is used as a state evaluation of a self-learning agent. The CAA self-learning algorithm computes, in a crossbar fashion, both decisions about actions and emotions (feelings) about consequence situations. The system is driven by the interaction between cognition and emotion.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 22,
+    "question": "According to the passage, what analogy example demonstrates gender bias in word embeddings?",
+    "expected_chunk_id": "word_embedding::32",
+    "expected_doc_id": "word_embedding",
+    "source_text": "sproportionate word associations reflecting gender and racial biases when extracting word analogies. For example, one of the analogies generated using the aforementioned word embedding is \"man is to computer programmer as woman is to homemaker\". Research done by Jieyu Zhao et al. shows that the applications of these trained word embeddings without careful oversight likely perpetuates existing bias in society, which is introduced through unaltered training data.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 23,
+    "question": "What is required by the extensions that relax or eliminate assumptions in linear regression in order to produce an equally precise model?",
+    "expected_chunk_id": "linear_regression::34",
+    "expected_doc_id": "linear_regression",
+    "source_text": "the response variable and their relationship, to get estimators that are unbiased in finite sample. Numerous extensions have been developed that allow each of these assumptions to be relaxed (reduced to a weaker form), and in some cases eliminated entirely. Generally these extensions require more data or modelling assumptions to produce an equally precise model.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 24,
+    "question": "What are the alternative names that autoencoder was called during the early days when terminology was uncertain?",
+    "expected_chunk_id": "autoencoder::55",
+    "expected_doc_id": "autoencoder",
+    "source_text": "tion or feature learning, but the concept became widely used for learning generative models of data. Some of the most powerful AIs in the 2010s involved autoencoder modules as a component of larger AI systems, such as VAE in Stable Diffusion, discrete VAE in Transformer-based image generators like DALL-E 1, etc. During the early days, when the terminology was uncertain, the autoencoder has also been called identity mapping, auto-associating, self-supervised backpropagation, or Diabolo network.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 25,
+    "question": "What field does the passage specifically mention as finding non-negative matrix factorization promising due to astrophysical signals being non-negative?",
+    "expected_chunk_id": "principal_component_analysis::178",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "examples to the statement that the cluster centroid subspace is spanned by the principal directions. Non-negative matrix factorization Non-negative matrix factorization (NMF) is a dimension reduction method where only non-negative elements in the matrices are used, which is therefore a promising method in astronomy, in the sense that astrophysical signals are non-negative.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 26,
+    "question": "What percentage of BERTBASE's parameters does DistilBERT retain?",
+    "expected_chunk_id": "bert_language_model::42",
+    "expected_doc_id": "bert_language_model",
+    "source_text": "n task, and using much larger mini-batch sizes. XLM-RoBERTa (2019) was a multilingual RoBERTa model. It was one of the first works on multilingual language modeling at scale. DistilBERT (2019) distills BERTBASE to a model with just 60% of its parameters (66M), while preserving 95% of its benchmark scores. Similarly, TinyBERT (2019) is a distilled model with just 28% of its parameters.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 27,
+    "question": "In the variance reduction formula for a node N, what do the symbols S_t and S_f represent?",
+    "expected_chunk_id": "decision_tree_learning::53",
+    "expected_doc_id": "decision_tree_learning",
+    "source_text": "ee), meaning that use of many other metrics would first require discretization before being applied. The variance reduction of a node N is defined as the total reduction of the variance of the target variable Y due to the split at this node: I V ( N ) = 1 | S | 2 \u2211 i \u2208 S \u2211 j \u2208 S 1 2 ( y i \u2212 y j ) 2 \u2212 ( | S t | | S | 1 | S t | 2 \u2211 i \u2208 S t \u2211 j \u2208 S t 1 2 ( y i \u2212 y j ) 2 + | S f | | S | 1 | S f | 2 \u2211 i \u2208 S f \u2211 j \u2208 S f 1 2 ( y i \u2212 y j ) 2 ) {\\displaystyle I_{V}(N)={\\frac {1}{|S|^{2}}}\\sum _{i\\in S}\\sum _{j\\in S}{\\frac {1}{2}}(y_{i}-y_{j})^{2}-\\left({\\frac {|S_{t}|}{|S|}}{\\frac {1}{|S_{t}|^{2}}}\\sum _{i\\in S_{t}}\\sum _{j\\in S_{t}}{\\frac {1}{2}}(y_{i}-y_{j})^{2}+{\\frac {|S_{f}|}{|S|}}{\\frac {1}{|S_{f}|^{2}}}\\sum _{i\\in S_{f}}\\sum _{j\\in S_{f}}{\\frac {1}{2}}(y_{i}-y_{j})^{2}\\right)} where S {\\displaystyle S} , S t {\\displaystyle S_{t}} , and S f {\\displaystyle S_{f}} are the set of presplit sample indices, set of sample indices for which the split test is true, and set of sample indices for which the split test is false, respectively.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 28,
+    "question": "According to the passage, what are the two main ways to enforce sparsity in sparse autoencoders?",
+    "expected_chunk_id": "autoencoder::23",
+    "expected_doc_id": "autoencoder",
+    "source_text": "o be sparse codes, that is, E \u03d5 ( x ) {\\displaystyle E_{\\phi }(x)} is close to zero in most entries. Sparse autoencoders may include more (rather than fewer) hidden units than inputs, but only a small number of the hidden units are allowed to be active at the same time. Encouraging sparsity improves performance on classification tasks. There are two main ways to enforce sparsity. One way is to simply clamp all but the highest-k activations of the latent code to zero.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 29,
+    "question": "According to the passage, what mechanism is used at each layer to contextualize each token within the scope of the context window with other unmasked tokens?",
+    "expected_chunk_id": "transformer_deep_learning_architecture::1",
+    "expected_doc_id": "transformer_deep_learning_architecture",
+    "source_text": "ons called tokens, and each token is converted into a vector via lookup from a word embedding table. At each layer, each token is then contextualized within the scope of the context window with other (unmasked) tokens via a parallel multi-head attention mechanism, allowing the signal for key tokens to be amplified and less important tokens to be diminished.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 30,
+    "question": "In a stacked RNN architecture, what is used as the input sequence to each layer above the current layer?",
+    "expected_chunk_id": "recurrent_neural_network::25",
+    "expected_doc_id": "recurrent_neural_network",
+    "source_text": "t , h 2 , t + 1 ) {\\displaystyle f_{\\theta _{2}}:(x_{1,t},h_{2,t})\\mapsto (x_{2,t},h_{2,t+1})} . ... Layer n {\\displaystyle n} has hidden vector h n , t {\\displaystyle h_{n,t}} , parameters \u03b8 n {\\displaystyle \\theta _{n}} , and maps f \u03b8 n : ( x n \u2212 1 , t , h n , t ) \u21a6 ( x n , t , h n , t + 1 ) {\\displaystyle f_{\\theta _{n}}:(x_{n-1,t},h_{n,t})\\mapsto (x_{n,t},h_{n,t+1})} . Each layer operates as a stand-alone RNN, and each layer's output sequence is used as the input sequence to the layer above.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 31,
+    "question": "According to the passage, how many parameters does a Naive Bayes classifier require for each feature or predictor in a learning problem?",
+    "expected_chunk_id": "naive_bayes_classifier::3",
+    "expected_doc_id": "naive_bayes_classifier",
+    "source_text": "e highly scalable, requiring only one parameter for each feature or predictor in a learning problem. Maximum-likelihood training can be done by evaluating a closed-form expression (simply by counting observations in each group), rather than the expensive iterative approximation algorithms required by most other models.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 32,
+    "question": "What is the time-complexity per time step for RTRL when recursively computing the partial derivatives?",
+    "expected_chunk_id": "recurrent_neural_network::59",
+    "expected_doc_id": "recurrent_neural_network",
+    "source_text": "rizon as in BPTT. Biological neural networks appear to be local with respect to both time and space. For recursively computing the partial derivatives, RTRL has a time-complexity of O(number of hidden x number of weights) per time step for computing the Jacobian matrices, while BPTT only takes O(number of weights) per time step, at the cost of storing all forward activations within the given time horizon.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 33,
+    "question": "In what year did Google Brain report that chain-of-thought prompting improves reasoning ability?",
+    "expected_chunk_id": "prompt_engineering::22",
+    "expected_doc_id": "prompt_engineering",
+    "source_text": "age models (LLMs) to solve a problem as a series of intermediate steps before giving a final answer. In 2022, Google Brain reported that chain-of-thought prompting improves reasoning ability by inducing the model to answer a multi-step problem with steps of reasoning that mimic a train of thought. Chain-of-thought techniques were developed to help LLMs handle multi-step reasoning tasks, such as arithmetic or commonsense reasoning questions.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 34,
+    "question": "Which conferences have hosted competitions on vector search in large databases according to the passage?",
+    "expected_chunk_id": "vector_database::5",
+    "expected_doc_id": "vector_database",
+    "source_text": "earch systems. In recent benchmarks, HNSW-based implementations have been among the best performers. Conferences such as the International Conference on Similarity Search and Applications (SISAP) and the Conference on Neural Information Processing Systems (NeurIPS) have hosted competitions on vector search in large databases.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 35,
+    "question": "What is the relationship between the centered data matrix after the j-th variable is multiplied by a factor and the diagonal matrix D in terms of the formula for X_c(\u03b1)?",
+    "expected_chunk_id": "principal_component_analysis::58",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "c}}} be the *centered* data matrix (n rows, p columns) and define the covariance \u03a3 = 1 n X c T X c . {\\displaystyle \\Sigma ={\\frac {1}{n}}\\,\\mathbf {X} _{\\text{c}}^{\\mathsf {T}}\\mathbf {X} _{\\text{c}}.} If the j {\\displaystyle j} \u2011th variable is multiplied by a factor \u03b1 j {\\displaystyle \\alpha _{j}} we obtain X c ( \u03b1 ) = X c D , D = diag \u2061 ( \u03b1 1 , \u2026 , \u03b1 p ) .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 36,
+    "question": "What are the two methods mentioned for measuring performance on a subset during the training process?",
+    "expected_chunk_id": "supervised_learning::8",
+    "expected_doc_id": "supervised_learning",
+    "source_text": "zing performance on a subset (called a validation set) of the training set, or via cross-validation. Evaluate the accuracy of the learned function. After parameter adjustment and learning, the performance of the resulting function should be measured on a test set that is separate from the training set. Algorithm choice A wide range of supervised learning algorithms are available, each with its strengths and weaknesses.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 37,
+    "question": "What was the first global conference exclusively dedicated to explainable artificial intelligence?",
+    "expected_chunk_id": "explainable_artificial_intelligence::60",
+    "expected_doc_id": "explainable_artificial_intelligence",
+    "source_text": "ntability will be required for automated decision-making processes to ensure trust and transparency. The first global conference exclusively dedicated to this emerging discipline was the 2017 International Joint Conference on Artificial Intelligence: Workshop on Explainable Artificial Intelligence (XAI).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 38,
+    "question": "What is the method called that combines attention scores across all layers by computing the dot product of successive attention maps?",
+    "expected_chunk_id": "attention_machine_learning::20",
+    "expected_doc_id": "attention_machine_learning",
+    "source_text": "maps) has become an important and routine way to inspect the decision making process of ViT models. One can compute the attention maps with respect to any attention head at any layer, while the deeper layers tend to show more semantically meaningful visualization. Attention rollout is a recursive algorithm to combine attention scores across all layers, by computing the dot product of successive attention maps.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 39,
+    "question": "What traditional statistical baselines are mentioned as being compared to ensemble methods in finance applications?",
+    "expected_chunk_id": "ensemble_learning::73",
+    "expected_doc_id": "ensemble_learning",
+    "source_text": "ely adopted in finance for tasks such as credit scoring, bankruptcy prediction, and risk management. By combining multiple base models, ensembles can exploit nonlinear relationships, handle high-dimensional and noisy data, and often deliver more stable out-of-sample performance than single models or traditional statistical baselines such as logistic regression and linear factor models.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 40,
+    "question": "What percentage of activations are discarded when max pooling uses filters of size 2\u00d72 with a stride of 2?",
+    "expected_chunk_id": "convolutional_neural_network::100",
+    "expected_doc_id": "convolutional_neural_network",
+    "source_text": "they do not provide global translation invariance in a CNN, unless a form of global pooling is used. The pooling layer commonly operates independently on every depth, or slice, of the input and resizes it spatially. A very common form of max pooling is a layer with filters of size 2\u00d72, applied with a stride of 2, which subsamples every depth slice in the input by 2 along both width and height, discarding 75% of the activations: f X , Y ( S ) = max a , b = 0 1 S 2 X + a , 2 Y + b .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 41,
+    "question": "According to the passage, what must be repeated on every training set if feature selection or model tuning is required by the modeling procedure?",
+    "expected_chunk_id": "cross-validation_statistics::67",
+    "expected_doc_id": "cross-validation_statistics",
+    "source_text": "on for the success of the swapped sampling is a built-in control for human biases in model building. In addition to placing too much faith in predictions that may vary across modelers and lead to poor external validity due to these confounding modeler effects, these are some other ways that cross-validation can be misused: By performing an initial analysis to identify the most informative features using the entire data set \u2013 if feature selection or model tuning is required by the modeling procedure, this must be repeated on every training set.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 42,
+    "question": "What does the acronym MIPRO stand for in the context of automatic prompt optimization?",
+    "expected_chunk_id": "prompt_engineering::45",
+    "expected_doc_id": "prompt_engineering",
+    "source_text": "set of demonstrations. These diverse demonstrations can then added to prompts for few-shot learning. Automatic prompt optimization Automatic prompt optimization techniques refine prompts for large language models by automatically searching over alternative prompt strings using evaluation datasets and task-specific metrics: MIPRO (Multi-prompt Instruction Proposal Optimizer) optimizes the instructions and few-shot demonstrations of multi-stage language model programs, proposing small changes to module prompts and retaining those that improve a downstream performance metric without access to module-level labels or gradients.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 43,
+    "question": "According to the passage, when will a new complex function likely perform worse than a simpler function on validation data?",
+    "expected_chunk_id": "overfitting::20",
+    "expected_doc_id": "overfitting",
+    "source_text": "or implies that any given complex function is a priori less probable than any given simple function. If the new, more complicated function is selected instead of the simple function, and if there was not a large enough gain in training data fit to offset the complexity increase, then the new complex function \"overfits\" the data and the complex overfitted function will likely perform worse than the simpler function on validation data outside the training dataset, even though the complex function performed as well, or perhaps even better, on the training dataset.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 44,
+    "question": "In a convolutional neural network's fully connected layer, what does the flattened matrix go through in order to classify the images?",
+    "expected_chunk_id": "convolutional_neural_network::20",
+    "expected_doc_id": "convolutional_neural_network",
+    "source_text": "neuron in another layer. It is the same as a traditional multilayer perceptron neural network (MLP). Each neuron in the fully connected layer receives input from all the neurons in the previous layer. These inputs are weighted and summed with the corresponding biases, and then passed through an activation function to perform a nonlinear transformation, generating the output. The flattened matrix goes through a fully connected layer to classify the images.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 45,
+    "question": "According to the passage, what is more valuable to spend time on than tuning the learning algorithms?",
+    "expected_chunk_id": "supervised_learning::30",
+    "expected_doc_id": "supervised_learning",
+    "source_text": "ng data and more informative features than it is to spend extra time tuning the learning algorithms. Algorithms The most widely used learning algorithms are: Support-vector machines Linear regression Logistic regression Naive Bayes Linear discriminant analysis Decision trees k-nearest neighbors algorithm Neural networks (e.g., Multilayer perceptron) Similarity learning How supervised learning algorithms work Given a set of N {\\displaystyle N} training examples of the form { ( x 1 , y 1 ) , . . .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 46,
+    "question": "What term is used to describe the minimal decision tree that a random forest can be transformed into while reproducing the same decision function?",
+    "expected_chunk_id": "random_forest::81",
+    "expected_doc_id": "random_forest",
+    "source_text": "from the data and allows end-users to have trust and confidence in the decisions made by the model. For example, following the path that a decision tree takes to make its decision is quite trivial, but following the paths of tens or hundreds of trees is much harder. To achieve both performance and interpretability, some model compression techniques allow transforming a random forest into a minimal \"born-again\" decision tree that faithfully reproduces the same decision function.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 47,
+    "question": "In nested cross-validation, how many sets is each outer training set sub-divided into?",
+    "expected_chunk_id": "cross-validation_statistics::36",
+    "expected_doc_id": "cross-validation_statistics",
+    "source_text": "ets are combined into the corresponding outer training set. This is repeated for each of the k sets. Each outer training set is further sub-divided into l sets. One by one, a set is selected as inner test (validation) set and the l - 1 other sets are combined into the corresponding inner training set. This is repeated for each of the l sets.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 48,
+    "question": "What are the three mathematical functions mentioned as examples that can be used to increase nonlinearity besides the activation function that enables better training of deeper networks?",
+    "expected_chunk_id": "convolutional_neural_network::109",
+    "expected_doc_id": "convolutional_neural_network",
+    "source_text": "bles better training of deeper networks, compared to widely used activation functions prior to 2011. Other functions can also be used to increase nonlinearity, for example the saturating hyperbolic tangent f ( x ) = tanh \u2061 ( x ) {\\displaystyle f(x)=\\tanh(x)} , f ( x ) = | tanh \u2061 ( x ) | {\\displaystyle f(x)=|\\tanh(x)|} , and the sigmoid function \u03c3 ( x ) = ( 1 + e \u2212 x ) \u2212 1 {\\textstyle \\sigma (x)=(1+e^{-x})^{-1}} .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 49,
+    "question": "What value of d in the polynomial kernel k(x_i, x_j) = (x_i \u00b7 x_j)^d results in the linear kernel?",
+    "expected_chunk_id": "support_vector_machine::45",
+    "expected_doc_id": "support_vector_machine",
+    "source_text": "n error of support vector machines, although given enough samples the algorithm still performs well. Some common kernels include: Polynomial (homogeneous): k ( x i , x j ) = ( x i \u22c5 x j ) d {\\displaystyle k(\\mathbf {x} _{i},\\mathbf {x} _{j})=(\\mathbf {x} _{i}\\cdot \\mathbf {x} _{j})^{d}} . Particularly, when d = 1 {\\displaystyle d=1} , this becomes the linear kernel.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 50,
+    "question": "What type of structure do recurrent neural networks have that distinguishes them from recursive neural networks which operate on any hierarchical structure?",
+    "expected_chunk_id": "recurrent_neural_network::96",
+    "expected_doc_id": "recurrent_neural_network",
+    "source_text": "ing. They are in fact recursive neural networks with a particular structure: that of a linear chain. Whereas recursive neural networks operate on any hierarchical structure, combining child representations into parent representations, recurrent neural networks operate on the linear progression of time, combining the previous time step and a hidden representation into the representation for the current time step.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 51,
+    "question": "What two types of methods can be used to fit naive Bayes models to data?",
+    "expected_chunk_id": "naive_bayes_classifier::4",
+    "expected_doc_id": "naive_bayes_classifier",
+    "source_text": "group), rather than the expensive iterative approximation algorithms required by most other models. Despite the use of Bayes' theorem in the classifier's decision rule, naive Bayes is not (necessarily) a Bayesian method, and naive Bayes models can be fit to data using either Bayesian or frequentist methods.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 52,
+    "question": "In PCA, what is the magnitude of each component's corresponding eigenvalue equivalent to when analyzing empirical data?",
+    "expected_chunk_id": "principal_component_analysis::179",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "therefore a promising method in astronomy, in the sense that astrophysical signals are non-negative. The PCA components are orthogonal to each other, while the NMF components are all non-negative and therefore constructs a non-orthogonal basis. In PCA, the contribution of each component is ranked based on the magnitude of its corresponding eigenvalue, which is equivalent to the fractional residual variance (FRV) in analyzing empirical data.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 53,
+    "question": "According to this passage, what are the three concepts that Model Functionality focuses on to clarify specific outputs or instances?",
+    "expected_chunk_id": "explainable_artificial_intelligence::8",
+    "expected_doc_id": "explainable_artificial_intelligence",
+    "source_text": "tuitive explanations for parameters), and Algorithmic Transparency (explaining how algorithms work). Model Functionality focuses on textual descriptions, visualization, and local explanations, which clarify specific outputs or instances rather than entire models. All these concepts aim to enhance the comprehensibility and usability of AI systems.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 54,
+    "question": "According to the passage, what types of machine learning is transfer learning related to due to its use of training with multiple objective functions?",
+    "expected_chunk_id": "transfer_learning::1",
+    "expected_doc_id": "transfer_learning",
+    "source_text": "ical literature on transfer of learning, although practical ties between the two fields are limited. Reusing or transferring information from previously learned tasks to new tasks has the potential to significantly improve learning efficiency. Since transfer learning makes use of training with multiple objective functions it is related to cost-sensitive machine learning and multi-objective optimization.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 55,
+    "question": "According to the passage, what happens to the accuracy of probabilistic language models as they become larger?",
+    "expected_chunk_id": "natural_language_processing::27",
+    "expected_doc_id": "natural_language_processing",
+    "source_text": "ccidentally omitted) in comparison to the rule-based systems, which are also more costly to produce. the larger such a (probabilistic) language model is, the more accurate it becomes, in contrast to rule-based systems that can gain accuracy only by increasing the amount and complexity of the rules leading to intractability problems.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 56,
+    "question": "According to the passage, what two characteristics should the outputs of weak learners exhibit in ensemble learning?",
+    "expected_chunk_id": "ensemble_learning::3",
+    "expected_doc_id": "ensemble_learning",
+    "source_text": "base models can be constructed using a single modelling algorithm, or several different algorithms. The idea is to train a diverse set of weak models on the same modelling task, such that the outputs of each weak learner have poor predictive ability (i.e., high bias), and among all weak learners, the outcome and error values exhibit high variance.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 57,
+    "question": "How much smaller can a language model network be while achieving comparable perplexity to larger counterparts when redesigned with the retriever in mind according to the Retro method?",
+    "expected_chunk_id": "retrieval-augmented_generation::23",
+    "expected_doc_id": "retrieval-augmented_generation",
+    "source_text": "refine retriever performance by prioritizing the most relevant retrieved documents during training. Language model By redesigning the language model with the retriever in mind, a 25-time smaller network can get comparable perplexity as its much larger counterparts. Because it is trained from scratch, this method (Retro) incurs the high cost of training runs that the original RAG scheme avoided.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 58,
+    "question": "What does each leaf of a decision tree contain according to the passage's description of tree structure?",
+    "expected_chunk_id": "decision_tree_learning::6",
+    "expected_doc_id": "decision_tree_learning",
+    "source_text": "of the target feature or the arc leads to a subordinate decision node on a different input feature. Each leaf of the tree is labeled with a class or a probability distribution over the classes, signifying that the data set has been classified by the tree into either a specific class, or into a particular probability distribution (which, if the decision tree is well-constructed, is skewed towards certain subsets of classes).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 59,
+    "question": "What problem does mean-removal create for astrophysical exposures in fields like astronomy when performing PCA?",
+    "expected_chunk_id": "principal_component_analysis::82",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "). Another limitation is the mean-removal process before constructing the covariance matrix for PCA. In fields such as astronomy, all the signals are non-negative, and the mean-removal process will force the mean of some astrophysical exposures to be zero, which consequently creates unphysical negative fluxes, and forward modeling has to be performed to recover the true magnitude of the signals.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 60,
+    "question": "In what year did Fukushima introduce the neocognitron?",
+    "expected_chunk_id": "convolutional_neural_network::36",
+    "expected_doc_id": "convolutional_neural_network",
+    "source_text": "on, origin of the trainable CNN architecture The \"neocognitron\" was introduced by Fukushima in 1980. The neocognitron introduced the two basic types of layers: \"S-layer\": a shared-weights receptive-field layer, later known as a convolutional layer, which contains units whose receptive fields cover a patch of the previous layer. A shared-weights receptive-field group (a \"plane\" in neocognitron terminology) is often called a filter, and a layer typically has several such filters.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 61,
+    "question": "In the gradient descent formula, why is the term \u03b7\u2207f(a) subtracted from a rather than added to it?",
+    "expected_chunk_id": "gradient_descent::7",
+    "expected_doc_id": "gradient_descent",
+    "source_text": "+}} , then f ( a n ) \u2265 f ( a n + 1 ) {\\displaystyle f(\\mathbf {a_{n}} )\\geq f(\\mathbf {a_{n+1}} )} . In other words, the term \u03b7 \u2207 f ( a ) {\\displaystyle \\eta \\nabla f(\\mathbf {a} )} is subtracted from a {\\displaystyle \\mathbf {a} } because we want to move against the gradient, toward the local minimum.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 62,
+    "question": "According to the passage, even if an observation could be assigned to two or more clusters, how many clusters is each observation actually assigned to in the K-means clustering algorithm?",
+    "expected_chunk_id": "k-means_clustering::17",
+    "expected_doc_id": "k-means_clustering",
+    "source_text": "ion to the cluster with the nearest mean (centroid): that with the least squared Euclidean distance. (Mathematically, this means partitioning the observations according to the Voronoi diagram generated by the means.) S i ( t ) = { x p : \u2016 x p \u2212 m i ( t ) \u2016 2 \u2264 \u2016 x p \u2212 m j ( t ) \u2016 2 \u2200 j , 1 \u2264 j \u2264 k } , {\\displaystyle S_{i}^{(t)}=\\left\\{x_{p}:\\left\\|x_{p}-m_{i}^{(t)}\\right\\|^{2}\\leq \\left\\|x_{p}-m_{j}^{(t)}\\right\\|^{2}\\ \\forall j,1\\leq j\\leq k\\right\\},} where each x p {\\displaystyle x_{p}} is assigned to exactly one S ( t ) {\\displaystyle S^{(t)}} , even if it could be assigned to two or more of them.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 63,
+    "question": "What type of division of natural language processing tasks is described in this passage?",
+    "expected_chunk_id": "natural_language_processing::33",
+    "expected_doc_id": "natural_language_processing",
+    "source_text": "he following is a list of some of the most commonly researched tasks in natural language processing. Some of these tasks have direct real-world applications, while others more commonly serve as subtasks that are used to aid in solving larger tasks. Though natural language processing tasks are closely intertwined, they can be subdivided into categories for convenience. A coarse division is given below.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 64,
+    "question": "According to the passage, who explains that axioms in social choice theory can be used to construct convincing explanations to solutions?",
+    "expected_chunk_id": "explainable_artificial_intelligence::85",
+    "expected_doc_id": "explainable_artificial_intelligence",
+    "source_text": "number of parameters. Along with other factors this leads to a theoretical limit for explainability. Explainability in social choice Explainability was studied also in social choice theory. Social choice theory aims at finding solutions to social decision problems, that are based on well-established axioms. Ariel D. Procaccia explains that these axioms can be used to construct convincing explanations to the solutions.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 65,
+    "question": "What is the ISBN of the book \"Ensemble Methods: Foundations and Algorithms\" by Zhou Zhihua?",
+    "expected_chunk_id": "ensemble_learning::82",
+    "expected_doc_id": "ensemble_learning",
+    "source_text": "ly applied in medical segmentation tasks, for example brain tumor and hyperintensities segmentation. See also Ensemble averaging (machine learning) Bayesian structural time series (BSTS) Mixture of experts References Further reading Zhou Zhihua (2012). Ensemble Methods: Foundations and Algorithms. Chapman and Hall/CRC. ISBN 978-1-439-83003-1. Robert Schapire; Yoav Freund (2012). Boosting: Foundations and Algorithms. MIT. ISBN 978-0-262-01718-3. External links Robi Polikar (ed.).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 66,
+    "question": "According to the passage, what are the dimensions of the matrix W that is formed by saving the first L columns of V?",
+    "expected_chunk_id": "principal_component_analysis::108",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "urce data's energy among each of the eigenvectors, where the eigenvectors form a basis for the data. The cumulative energy content g for the jth eigenvector is the sum of the energy content across all of the eigenvalues from 1 through j divided by the sum of energy content across all eigenvalues (shown in step 8): g j = \u2211 k = 1 j D k k for j = 1 , \u2026 , p {\\displaystyle g_{j}=\\sum _{k=1}^{j}D_{kk}\\qquad {\\text{for }}j=1,\\dots ,p} Select a subset of the eigenvectors as basis vectors Save the first L columns of V as the p \u00d7 L matrix W: W k l = V k \u2113 for k = 1 , \u2026 , p \u2113 = 1 , \u2026 , L {\\displaystyle W_{kl}=V_{k\\ell }\\qquad {\\text{for }}k=1,\\dots ,p\\qquad \\ell =1,\\dots ,L} where 1 \u2264 L \u2264 p .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 67,
+    "question": "Who first introduced the idea of using a randomized procedure rather than deterministic optimization in the context of random forests?",
+    "expected_chunk_id": "random_forest::9",
+    "expected_doc_id": "random_forest",
+    "source_text": "ed procedure, rather than a deterministic optimization was first introduced by Thomas G. Dietterich. The proper introduction of random forests was made in a paper by Leo Breiman, that has become one of the world's most cited papers. This paper describes a method of building a forest of uncorrelated trees using a CART-like procedure, combined with randomized node optimization and bagging.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 68,
+    "question": "In what year did a conditional GAN learn to generate 1000 image classes of ImageNet?",
+    "expected_chunk_id": "generative_adversarial_network::63",
+    "expected_doc_id": "generative_adversarial_network",
+    "source_text": "ility distribution of images generated by the generator when given class label c {\\displaystyle c} . In 2017, a conditional GAN learned to generate 1000 image classes of ImageNet. GANs with alternative architectures The GAN game is a general framework and can be run with any reasonable parametrization of the generator G {\\displaystyle G} and discriminator D {\\displaystyle D} .",
+    "reviewed": false
+  },
+  {
+    "eval_id": 69,
+    "question": "In what year did Burnetas and Katehakis study the exploration-exploitation trade-off for finite state space Markov decision processes?",
+    "expected_chunk_id": "reinforcement_learning::20",
+    "expected_doc_id": "reinforcement_learning",
+    "source_text": "oblem. However, reinforcement learning converts both planning problems to machine learning problems. Exploration The trade-off between exploration and exploitation has been most thoroughly studied through the multi-armed bandit problem and for finite state space Markov decision processes in Burnetas and Katehakis (1997). Reinforcement learning requires clever exploration mechanisms; randomly selecting actions, without reference to an estimated probability distribution, shows poor performance.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 70,
+    "question": "What is the perceptron of optimal stability equivalently known as?",
+    "expected_chunk_id": "support_vector_machine::8",
+    "expected_doc_id": "support_vector_machine",
+    "source_text": "ose the hyperplane so that the distance from it to the nearest data point on each side is maximized. If such a hyperplane exists, it is known as the maximum-margin hyperplane and the linear classifier it defines is known as a maximum-margin classifier; or equivalently, the perceptron of optimal stability.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 71,
+    "question": "What measure has been used to summarize error rates in phoneme recognition since 1991?",
+    "expected_chunk_id": "deep_learning::101",
+    "expected_doc_id": "deep_learning",
+    "source_text": "ence recognition, which, unlike word-sequence recognition, allows weak phone bigram language models. This lets the strength of the acoustic modeling aspects of speech recognition be more easily analyzed. The error rates listed below, including these early results and measured as percent phone error rates (PER), have been summarized since 1991.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 72,
+    "question": "What is the formula for converting the signal to noise ratio X to decibels according to this passage?",
+    "expected_chunk_id": "roc_curve::78",
+    "expected_doc_id": "roc_curve",
+    "source_text": "t)-{\\sqrt {\\mathcal {X/2}}}\\right)} for the signal to noise ratio X {\\displaystyle {\\mathcal {X}}} . Here, X {\\displaystyle {\\mathcal {X}}} is not in decibels, as is common in many radar applications. Conversion to decibels is through X d B = 10 log 10 \u2061 X {\\displaystyle {\\mathcal {X}}_{dB}=10\\log _{10}{\\mathcal {X}}} . From this figure, the common entries in the radar range equation (with noise factors) may be solved, to estimate the required effective radiated power.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 73,
+    "question": "In the log-likelihood formula for categorical outcomes in logistic regression, what value does the indicator function \u0394(n, y_k) equal when y_k is not equal to n?",
+    "expected_chunk_id": "logistic_regression::103",
+    "expected_doc_id": "logistic_regression",
+    "source_text": "gorical outcomes be denoted by y k {\\displaystyle y_{k}} which can be equal to any integer in [0,N]. The log-likelihood is then: \u2113 = \u2211 k = 1 K \u2211 n = 0 N \u0394 ( n , y k ) ln \u2061 ( p n ( x k ) ) {\\displaystyle \\ell =\\sum _{k=1}^{K}\\sum _{n=0}^{N}\\Delta (n,y_{k})\\,\\ln(p_{n}({\\boldsymbol {x}}_{k}))} where \u0394 ( n , y k ) {\\displaystyle \\Delta (n,y_{k})} is an indicator function which equals 1 if yk = n and zero otherwise.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 74,
+    "question": "Under what assumption can PCA be shown to be optimal for dimensionality reduction from an information-theoretic point-of-view?",
+    "expected_chunk_id": "principal_component_analysis::88",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "nsionality reduction tends to minimize that information loss, under certain signal and noise models. Under the assumption that x = s + n , {\\displaystyle \\mathbf {x} =\\mathbf {s} +\\mathbf {n} ,} that is, that the data vector x {\\displaystyle \\mathbf {x} } is the sum of the desired information-bearing signal s {\\displaystyle \\mathbf {s} } and a noise signal n {\\displaystyle \\mathbf {n} } one can show that PCA can be optimal for dimensionality reduction, from an information-theoretic point-of-view.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 75,
+    "question": "When did OpenAI release InstructGPT?",
+    "expected_chunk_id": "reinforcement_learning::113",
+    "expected_doc_id": "reinforcement_learning",
+    "source_text": "commonly proximal policy optimization (PPO), to produce outputs that the reward model scores highly. The reward model substitutes for human raters during optimization, so new human judgments are not required at each training step, although the method as a whole depends on a dataset of human-annotated preferences. OpenAI used RLHF to train InstructGPT, released in January 2022, and ChatGPT, released in November 2022.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 76,
+    "question": "What is the full name of the OC1 decision tree algorithm?",
+    "expected_chunk_id": "decision_tree_learning::18",
+    "expected_doc_id": "decision_tree_learning",
+    "source_text": "1 internal node as a child (except for the bottommost node, whose only child is a single leaf node). While less expressive, decision lists are arguably easier to understand than general decision trees due to their added sparsity, permit non-greedy learning methods and monotonic constraints to be imposed. Notable decision tree algorithms include: ID3 (Iterative Dichotomiser 3) C4.5 (successor of ID3) CART (Classification And Regression Tree) OC1 (Oblique classifier 1).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 77,
+    "question": "In the social sciences, what is ROC analysis often called?",
+    "expected_chunk_id": "roc_curve::71",
+    "expected_doc_id": "roc_curve",
+    "source_text": "ology and medical research and are frequently mentioned in conjunction with evidence-based medicine. In radiology, ROC analysis is a common technique to evaluate new radiology techniques. In the social sciences, ROC analysis is often called the ROC Accuracy Ratio, a common technique for judging the accuracy of default probability models.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 78,
+    "question": "What was the TPR value for Feature B in the comparison with Feature A?",
+    "expected_chunk_id": "decision_tree_learning::31",
+    "expected_doc_id": "decision_tree_learning",
+    "source_text": "stimate of 6 and a TPR of approximately 0.73 while Feature B had an estimate of 4 and a TPR of 0.75. This shows that although the positive estimate for some feature may be higher, the more accurate TPR value for that feature may be lower when compared to other features that have a lower positive estimate. Depending on the situation and knowledge of the data and decision trees, one may opt to use the positive estimate for a quick and easy solution to their problem.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 79,
+    "question": "What specific example is given in the passage for the use of computer vision in counting organisms in the biological sciences?",
+    "expected_chunk_id": "computer_vision::63",
+    "expected_doc_id": "computer_vision",
+    "source_text": "ing and counting organisms in the biological sciences (for example in leaf counting for food crops). Typical tasks Each of the application areas described above employ a range of computer vision tasks; more or less well-defined measurement problems or processing problems, which can be solved using a variety of methods. Some examples of typical computer vision tasks are presented below.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 80,
+    "question": "According to the passage, what does the equation for g(p(x)) illustrate about the relationship between the logit and linear regression?",
+    "expected_chunk_id": "logistic_regression::53",
+    "expected_doc_id": "logistic_regression",
+    "source_text": "quivalently, after exponentiating both sides we have the odds: p ( x ) 1 \u2212 p ( x ) = e \u03b2 0 + \u03b2 1 x . {\\displaystyle {\\frac {p(x)}{1-p(x)}}=e^{\\beta _{0}+\\beta _{1}x}.} Interpretation of these terms In the above equations, the terms are as follows: g {\\displaystyle g} is the logit function. The equation for g ( p ( x ) ) {\\displaystyle g(p(x))} illustrates that the logit (i.e., log-odds or natural logarithm of the odds) is equivalent to the linear regression expression.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 81,
+    "question": "What can neurons be aggregated into that perform human-comprehensible functions according to findings by several groups?",
+    "expected_chunk_id": "explainable_artificial_intelligence::55",
+    "expected_doc_id": "explainable_artificial_intelligence",
+    "source_text": "ainability in the context of socio-technical systems, many of which include artificial intelligence. Some techniques allow visualisations of the inputs to which individual software neurons respond to most strongly. Several groups found that neurons can be aggregated into circuits that perform human-comprehensible functions, some of which reliably arise across different networks trained independently.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 82,
+    "question": "What technique do newer LLM models use to exhibit some resistance to jailbreaking?",
+    "expected_chunk_id": "large_language_model::135",
+    "expected_doc_id": "large_language_model",
+    "source_text": "Newer models exhibit some resistance to jailbreaking through separation of user and system prompts. LLMs have trouble differentiating user instructions from instructions in content not authored by the user, such as in web pages and uploaded files. Adversarial robustness remains underdeveloped, with models vulnerable to prompt injection attacks and jailbreaking through carefully crafted user inputs that bypass safety training mechanisms.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 83,
+    "question": "What happens to the principal components when all values of the first variable are multiplied by 100?",
+    "expected_chunk_id": "principal_component_analysis::62",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "he cosines of rotation) for the two variables with respect to the principal component will be equal. But if we multiply all values of the first variable by 100, then the first principal component will be almost the same as that variable, with a small contribution from the other variable, whereas the second component will be almost aligned with the second original variable.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 84,
+    "question": "What is the proven upper bound on the running time of k-means algorithm for n points in an integer lattice {1, \u2026, M}^d?",
+    "expected_chunk_id": "k-means_clustering::33",
+    "expected_doc_id": "k-means_clustering",
+    "source_text": "}\\log ^{4}(n)/\\sigma ^{6})} , which is a polynomial in n, k, d and 1 / \u03c3 {\\displaystyle 1/\\sigma } . Better bounds are proven for simple cases. For example, it is shown that the running time of k-means algorithm is bounded by O ( d n 4 M 2 ) {\\displaystyle O(dn^{4}M^{2})} for n points in an integer lattice { 1 , \u2026 , M } d {\\displaystyle \\{1,\\dots ,M\\}^{d}} . Lloyd's algorithm is the standard approach for this problem.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 85,
+    "question": "According to the passage, what happens to the signal-to-noise ratio in the first few principal components compared to later ones?",
+    "expected_chunk_id": "principal_component_analysis::43",
+    "expected_doc_id": "principal_component_analysis",
+    "source_text": "tionate effect of the noise is less\u2014the first few components achieve a higher signal-to-noise ratio. PCA thus can have the effect of concentrating much of the signal into the first few principal components, which can usefully be captured by dimensionality reduction; while the later principal components may be dominated by noise, and so disposed of without great loss.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 86,
+    "question": "In an APC arrangement with strongly correlated predictor variables in a standardized model, what mathematical constraint must the weight vectors w satisfy to be at or near the centre of the simplex?",
+    "expected_chunk_id": "linear_regression::85",
+    "expected_doc_id": "linear_regression",
+    "source_text": "tely estimated by \u03b2 ^ 1 \u2032 {\\displaystyle {\\hat {\\beta }}'_{1}} . It is also not a meaningful effect. In general, for a group of q {\\displaystyle q} strongly correlated predictor variables in an APC arrangement in the standardized model, group effects whose weight vectors w {\\displaystyle \\mathbf {w} } are at or near the centre of the simplex \u2211 j = 1 q w j = 1 {\\textstyle \\sum _{j=1}^{q}w_{j}=1} ( w j \u2265 0 {\\displaystyle w_{j}\\geq 0} ) are meaningful and can be accurately estimated by their minimum-variance unbiased linear estimators.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 87,
+    "question": "In the log-likelihood formula for K measurements in logistic regression, what mathematical notation is used to represent the explanatory vector of the k-th measurement?",
+    "expected_chunk_id": "logistic_regression::86",
+    "expected_doc_id": "logistic_regression",
+    "source_text": "splaystyle y=1} . The optimum beta coefficients may again be found by maximizing the log-likelihood. For K measurements, defining x k {\\displaystyle {\\boldsymbol {x}}_{k}} as the explanatory vector of the k-th measurement, and y k {\\displaystyle y_{k}} as the categorical outcome of that measurement, the log likelihood may be written in a form very similar to the simple M = 1 {\\displaystyle M=1} case above: \u2113 = \u2211 k = 1 K y k log b \u2061 ( p ( x k ) ) + \u2211 k = 1 K ( 1 \u2212 y k ) log b \u2061 ( 1 \u2212 p ( x k ) ) {\\displaystyle \\ell =\\sum _{k=1}^{K}y_{k}\\log _{b}(p({\\boldsymbol {x_{k}}}))+\\sum _{k=1}^{K}(1-y_{k})\\log _{b}(1-p({\\boldsymbol {x_{k}}}))} As in the simple example above, finding the optimum \u03b2 parameters will require numerical methods.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 88,
+    "question": "What does the variable X~ range over in the formal search optimization for prompt engineering with masked language models?",
+    "expected_chunk_id": "prompt_engineering::49",
+    "expected_doc_id": "prompt_engineering",
+    "source_text": "ed language models like BERT, and searches only over token sequences, rather than numerical vectors. Formally, it searches for arg \u2061 max X ~ \u2211 i log \u2061 P r [ Y i | X ~ \u2217 X i ] {\\displaystyle \\arg \\max _{\\tilde {X}}\\sum _{i}\\log Pr[Y^{i}|{\\tilde {X}}\\ast X^{i}]} where X ~ {\\displaystyle {\\tilde {X}}} ranges over token sequences of a specified length. History Early precedents of structured user interaction with ruled-based AI systems can be found in enterprise automation software from 1990s.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 89,
+    "question": "In whose theory can the explanation of the forest method's resistance to overtraining be found?",
+    "expected_chunk_id": "random_forest::6",
+    "expected_doc_id": "random_forest",
+    "source_text": "behave similarly, as long as they are randomly forced to be insensitive to some feature dimensions. This observation that a more complex classifier (a larger forest) gets more accurate nearly monotonically is in sharp contrast to the common belief that the complexity of a classifier can only grow to a certain level of accuracy before being hurt by overfitting. The explanation of the forest method's resistance to overtraining can be found in Kleinberg's theory of stochastic discrimination.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 90,
+    "question": "What metric is usually used to evaluate language models due to their tendency to overfit to training data?",
+    "expected_chunk_id": "large_language_model::97",
+    "expected_doc_id": "large_language_model",
+    "source_text": "n the text corpus, and \"context for token i {\\displaystyle i} \" depends on the specific type of LLM. If the LLM is autoregressive, then \"context for token i {\\displaystyle i} \" is the segment of text appearing before token i {\\displaystyle i} . If the LLM is masked, then \"context for token i {\\displaystyle i} \" is the segment of text surrounding token i {\\displaystyle i} . Because language models may overfit to training data, models are usually evaluated by their perplexity on a test set.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 91,
+    "question": "In what decade did research in projective 3-D reconstructions lead to better understanding of camera calibration according to this passage?",
+    "expected_chunk_id": "computer_vision::12",
+    "expected_doc_id": "computer_vision",
+    "source_text": "e of shape from various cues such as shading, texture and focus, and contour models known as snakes. Researchers also realized that many of these mathematical concepts could be treated within the same optimization framework as regularization and Markov random fields. By the 1990s, some of the previous research topics became more active than others. Research in projective 3-D reconstructions led to better understanding of camera calibration.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 92,
+    "question": "In what year did Rosenblatt publish Principles of Neurodynamics where he described closed-loop cross-coupled and back-coupled perceptron networks?",
+    "expected_chunk_id": "recurrent_neural_network::10",
+    "expected_doc_id": "recurrent_neural_network",
+    "source_text": "n networks whose middle layer contains recurrent connections that change by a Hebbian learning rule. Later, in Principles of Neurodynamics (1961), he described \"closed-loop cross-coupled\" and \"back-coupled\" perceptron networks, and made theoretical and experimental studies for Hebbian learning in these networks, and noted that a fully cross-coupled perceptron network is equivalent to an infinitely deep feedforward network.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 93,
+    "question": "What does empirical risk minimization lead to when G contains many candidate functions or the training set is not sufficiently large?",
+    "expected_chunk_id": "supervised_learning::42",
+    "expected_doc_id": "supervised_learning",
+    "source_text": "}})=-\\log P(y|x)} , then empirical risk minimization is equivalent to maximum likelihood estimation. When G {\\displaystyle G} contains many candidate functions or the training set is not sufficiently large, empirical risk minimization leads to high variance and poor generalization. The learning algorithm is able to memorize the training examples without generalizing well (overfitting).",
+    "reviewed": false
+  },
+  {
+    "eval_id": 94,
+    "question": "What type of attention weights are created when a sum of encoded positions is fed into the attention mechanism in a transformer, according to the comparison made in this passage?",
+    "expected_chunk_id": "transformer_deep_learning_architecture::70",
+    "expected_doc_id": "transformer_deep_learning_architecture",
+    "source_text": "{j}c_{j}\\,\\mathrm {diag} (f(\\Delta t_{j}))\\right)f(t)} for any constants c j {\\displaystyle c_{j}} . This allows the transformer to take any encoded position and find a linear sum of the encoded locations of its neighbors. This sum of encoded positions, when fed into the attention mechanism, would create attention weights on its neighbors, much like what happens in a convolutional neural network language model.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 95,
+    "question": "In the illustrative example using the sentence \"my dog is cute\", which numbered token position is randomly picked to demonstrate the masking process?",
+    "expected_chunk_id": "bert_language_model::20",
+    "expected_doc_id": "bert_language_model",
+    "source_text": "presentation (like Word2Vec), where it would be run over sentences not containing any [MASK] tokens. It is later found that more diverse training objectives are generally better. As an illustrative example, consider the sentence \"my dog is cute\". It would first be divided into tokens like \"my1 dog2 is3 cute4\". Then a random token in the sentence would be picked. Let it be the 4th one \"cute4\".",
+    "reviewed": false
+  },
+  {
+    "eval_id": 96,
+    "question": "What thought experiment by John Searle is used to illustrate the premise of symbolic NLP?",
+    "expected_chunk_id": "natural_language_processing::3",
+    "expected_doc_id": "natural_language_processing",
+    "source_text": "test includes a task that involves the automated interpretation and generation of natural language. Symbolic NLP (1950s \u2013 early 1990s) The premise of symbolic NLP is often illustrated using John Searle's Chinese room thought experiment: Given a collection of rules (e.g., a Chinese phrasebook, with questions and matching answers), the computer emulates natural language understanding (or other NLP tasks) by applying those rules to the data it confronts.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 97,
+    "question": "In the example about measuring a ball being tossed in the air, what variable notation is used to represent the heights of ascent?",
+    "expected_chunk_id": "linear_regression::30",
+    "expected_doc_id": "linear_regression",
+    "source_text": "laystyle {\\boldsymbol {\\varepsilon }}=\\mathbf {y} -\\mathbf {X} {\\boldsymbol {\\beta }}} is minimized. For example, it is common to use the sum of squared errors \u2016 \u03b5 \u2016 2 2 {\\displaystyle \\|{\\boldsymbol {\\varepsilon }}\\|_{2}^{2}} as a measure of \u03b5 {\\displaystyle {\\boldsymbol {\\varepsilon }}} for minimization. Example Consider a situation where a small ball is being tossed up in the air and then we measure its heights of ascent hi at various moments in time ti.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 98,
+    "question": "What does RU-IRL assume is the cause of randomness in an observed agent's behavior, as opposed to prior IRL approaches?",
+    "expected_chunk_id": "reinforcement_learning::89",
+    "expected_doc_id": "reinforcement_learning",
+    "source_text": "forcement learning (RU-IRL). RU-IRL is based on random utility theory and Markov decision processes. While prior IRL approaches assume that the apparent random behavior of an observed agent is due to it following a random policy, RU-IRL assumes that the observed agent follows a deterministic policy but randomness in observed behavior is due to the fact that an observer only has partial access to the features the observed agent uses in decision making.",
+    "reviewed": false
+  },
+  {
+    "eval_id": 99,
+    "question": "What type of decision rule classification will the naive Bayes classifier make correctly as long as the correct class is predicted as more probable than any other class?",
+    "expected_chunk_id": "naive_bayes_classifier::50",
+    "expected_doc_id": "naive_bayes_classifier",
+    "source_text": "dimensionality, such as the need for data sets that scale exponentially with the number of features. While naive Bayes often fails to produce a good estimate for the correct class probabilities, this may not be a requirement for many applications. For example, the naive Bayes classifier will make the correct MAP decision rule classification so long as the correct class is predicted as more probable than any other class.",
+    "reviewed": false
+  }
+]
