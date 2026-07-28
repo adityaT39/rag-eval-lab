@@ -54,6 +54,29 @@ Retrieval run against reviewed questions → Recall@5, MRR (run_experiments.py)
 
 ## Results
 
+**TL;DR / key takeaways:**
+- **Reranking was the single biggest lever** — 90% → 97% recall@5 just from
+  adding a cross-encoder rerank step on top of embedding retrieval.
+- **Surprise: a plain keyword-search baseline (BM25) tied the fancy
+  embedding+reranker pipeline** (97% recall@5 either way). Not a knock on
+  embeddings — it's because this eval set's questions were generated
+  directly from the source text, so they share literal vocabulary with the
+  answer. It's a real limitation of the eval methodology, disclosed here
+  rather than buried, and it means the embedding advantage would likely
+  widen on more naturalistic, paraphrased queries.
+- **Finding the right passage isn't the same as answering correctly.**
+  Retrieval hit 97% recall, but grading the actual generated answers
+  (LLM-as-judge) put accuracy at 83.3% strict / 93.3% lenient — a
+  meaningfully lower number that retrieval metrics alone would have hidden.
+  Generation is its own failure mode, separate from retrieval.
+- **500-character chunks beat both smaller and larger chunks** — evidence
+  that chunk size is a real tunable, not an arbitrary tutorial default.
+- **Caught and fixed a real evaluation bug mid-project** (see below) —
+  cross-chunk-size comparisons were silently broken by chunk-ID drift until
+  the scoring was redesigned around character-span overlap. Documented
+  instead of quietly patched, because catching your own eval being wrong is
+  as much the point of this project as the RAG pipeline itself.
+
 Ran against a 100-question human-reviewed eval set (all 100 kept on review).
 Retrieval quality is measured at the passage level: a "hit" counts if the
 retrieved chunk's character span overlaps the source passage the question
