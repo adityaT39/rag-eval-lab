@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: ruff check src/ tests/ app.py
+
+      # Only the pure-logic modules (chunk.py, scoring.py) are unit tested.
+      # The ML modules (embeddings, vector store, reranking) depend on large
+      # model downloads (torch, sentence-transformers) that aren't worth the
+      # CI minutes for a portfolio project -- they're covered by the
+      # `python src/*.py` smoke runs documented in the README instead.
+      - name: Run tests
+        run: pytest tests/ -v

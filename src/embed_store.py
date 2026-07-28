@@ -23,10 +23,9 @@ def get_embedder(model_name: str) -> SentenceTransformer:
 def build_collection(chunks: list[dict], collection_name: str, embed_model: str) -> chromadb.Collection:
     client = chromadb.PersistentClient(path=str(DB_DIR))
 
-    try:
+    existing_names = {c.name for c in client.list_collections()}
+    if collection_name in existing_names:
         client.delete_collection(collection_name)
-    except Exception:
-        pass
 
     collection = client.create_collection(collection_name, metadata={"embed_model": embed_model})
     embedder = get_embedder(embed_model)

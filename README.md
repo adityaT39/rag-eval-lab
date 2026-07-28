@@ -1,5 +1,7 @@
 # RAG Eval Lab
 
+[![CI](https://github.com/adityaT39/rag-eval-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/adityaT39/rag-eval-lab/actions/workflows/ci.yml)
+
 A Retrieval-Augmented Generation (RAG) pipeline over a Wikipedia corpus of
 machine learning / AI concepts — built to answer one question properly
 instead of skipping it: **is the retrieval actually any good?**
@@ -65,7 +67,8 @@ below for why.
 | chunk_size=500 | 90.00% | 0.803 | 100 |
 | chunk_size=1000 | 87.00% | 0.773 | 100 |
 | reranker=off | 90.00% | 0.803 | 100 |
-| reranker=on | **97.00%** | **0.965** | 100 |
+| reranker=on | 97.00% | 0.965 | 100 |
+| **BM25 (keyword baseline)** | **97.00%** | 0.942 | 100 |
 
 (Live copy: [`results/results_table.md`](results/results_table.md) /
 [`results/experiment_results.json`](results/experiment_results.json))
@@ -78,11 +81,40 @@ below for why.
    metrics.
 2. **Cross-encoder reranking** — retrieve a wider candidate pool (20) with
    the embedding model, then re-score with a cross-encoder before taking the
-   top-5. This gave the single biggest improvement in the project: recall@5
-   90% → 97%, MRR 0.803 → 0.965. Cross-encoders score the query and passage
-   jointly (rather than comparing precomputed independent vectors), which is
-   slower per-query but substantially more accurate — worth it for the
-   quality gain here.
+   top-5. This gave the single biggest improvement in the pure-embedding
+   pipeline: recall@5 90% → 97%, MRR 0.803 → 0.965. Cross-encoders score the
+   query and passage jointly (rather than comparing precomputed independent
+   vectors), which is slower per-query but substantially more accurate.
+3. **BM25 keyword-search baseline** — the honest finding here: a classic
+   keyword-matching retriever (`rank_bm25`, no embeddings, no ML) scores
+   essentially the same as the reranked embedding pipeline (97% recall@5,
+   0.942 vs 0.965 MRR). This isn't a failure of the embedding approach — it's
+   a property of this eval set: the questions were generated directly from
+   source passages, so they tend to share literal vocabulary with the answer
+   (e.g. asking "what does RU-IRL assume..." when the passage itself uses
+   "RU-IRL"). BM25 is unusually strong on this kind of lexically-aligned
+   question. On paraphrased, naturalistic user queries — which don't
+   reliably reuse the source's exact words — the embedding+reranker approach
+   would be expected to pull further ahead. Worth stating plainly rather
+   than only reporting the numbers that flatter the fancier system.
+4. **Answer-quality (LLM-as-judge), not just retrieval** — retrieval metrics
+   only prove the right passage was *found*, not that the final answer is
+   *correct*. Sampled 30 questions, ran them through the full pipeline, and
+   had Claude grade each generated answer against the known-correct source
+   passage:
+
+   | | Strict (exact match) | Lenient (allows minor gaps) |
+   |---|---|---|
+   | Accuracy | 83.3% | 93.3% |
+
+   (See [`results/answer_quality.json`](results/answer_quality.json) for
+   every graded example.) The two "incorrect" cases were themselves useful:
+   one was the system correctly *refusing to answer* after a genuine
+   retrieval miss (right behavior, not a hallucination), and the other was a
+   real hallucination — the model added fabricated statistical detail (a
+   Gaussian-noise assumption) that wasn't in the retrieved passage. Being
+   able to tell those two failure modes apart is the whole point of grading
+   the answer, not just the retrieval.
 
 **A bug worth mentioning, because it's part of the real story:** my first
 pass at this experiment used exact `chunk_id` matching to grade correctness,
@@ -121,27 +153,52 @@ python src/review_eval_set.py
 # 5. Run retrieval experiments (chunk size + reranking) and produce metrics
 python src/run_experiments.py
 
-# 6. Ask questions through the full RAG pipeline
+# 6. Run the BM25 keyword-search baseline for comparison
+python src/bm25_baseline.py
+
+# 7. Grade actual generated answers (not just retrieval) via LLM-as-judge
+python src/evaluate_answers.py
+
+# 8. Ask questions through the full RAG pipeline
 python src/answer.py "What is the vanishing gradient problem?"
 
-# 7. Or launch the interactive demo
+# 9. Or launch the interactive demo
 streamlit run app.py
 ```
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest tests/ -v          # unit tests for chunking + scoring logic
+ruff check src/ tests/ app.py   # lint
+```
+
+Only the pure-logic modules (`chunk.py`, `scoring.py`) are unit tested —
+the ML modules (embeddings, vector store, reranking) depend on multi-GB
+model downloads that aren't worth the CI minutes for a portfolio project.
+Those are covered by the smoke-run commands above instead. Runs
+automatically on every push via GitHub Actions (see badge at the top).
 
 ## Project structure
 
 ```
 src/
-  ingest.py             # Wikipedia corpus download
-  chunk.py              # sentence-aware chunking, size configurable
-  embed_store.py         # embeddings + Chroma vector store + retrieval
-  generate_eval_set.py   # LLM-assisted eval question generation
-  review_eval_set.py     # human-in-the-loop spot-check CLI
-  run_experiments.py     # chunk-size / reranker experiments + metrics
-  answer.py               # end-to-end grounded QA with citations
-app.py                    # Streamlit demo UI
-eval/                     # generated + reviewed eval sets
-results/                  # experiment metrics (json + markdown table)
+  ingest.py               # Wikipedia corpus download
+  chunk.py                # sentence-aware chunking, size configurable
+  scoring.py               # pure retrieval-scoring logic (unit tested, zero ML deps)
+  embed_store.py           # embeddings + Chroma vector store + retrieval
+  generate_eval_set.py     # LLM-assisted eval question generation
+  review_eval_set.py       # human-in-the-loop spot-check CLI
+  run_experiments.py       # chunk-size / reranker experiments + metrics
+  bm25_baseline.py         # keyword-search baseline for comparison
+  evaluate_answers.py      # LLM-as-judge grading of generated answers
+  answer.py                 # end-to-end grounded QA with citations
+app.py                      # Streamlit demo UI
+tests/                      # pytest unit tests for chunk.py / scoring.py
+.github/workflows/ci.yml    # lint + test on every push
+eval/                       # generated + reviewed eval sets
+results/                    # experiment metrics (json + markdown table)
 ```
 
 ## Honest notes on methodology

@@ -1,0 +1,223 @@
+{
+  "n": 30,
+  "counts": {
+    "CORRECT": 25,
+    "PARTIALLY_CORRECT": 3,
+    "INCORRECT": 2,
+    "UNKNOWN": 0
+  },
+  "accuracy_strict": 0.8333333333333334,
+  "accuracy_lenient": 0.9333333333333333,
+  "examples": [
+    {
+      "eval_id": 41,
+      "question": "According to the passage, what must be repeated on every training set if feature selection or model tuning is required by the modeling procedure?",
+      "answer": "According to passages [1] and [2], **feature selection or model tuning** must be repeated on every training set if required by the modeling procedure.\n\nPassage [2] explicitly states: \"if feature selection or model tuning is required by the modeling procedure, this must be repeated on every training set.\"\n\nPassage [1] provides the same information and adds context about why this is necessary (to avoid upwardly biased predictions) and notes that if cross-validation is used to decide which features to use, \"an inner cross-validation to carry out the feature selection on every training set must be performed.\"",
+      "grade": "PARTIALLY_CORRECT",
+      "reason": "The core answer about \"feature selection or model tuning\" being repeated on every training set is correct and directly quoted from the source, but the system fabricates references to \"passages [1] and [2]\" and invents additional context about \"upwardly biased predictions\" and \"inner cross-validation\" that does not exist in the provided source passage."
+    },
+    {
+      "eval_id": 19,
+      "question": "In the equation for bounded critical points, what matrix must be inverted when expressing w tilde star in terms of g star and u?",
+      "answer": "Based on passage [1], when expressing w tilde star (w\u0303*) in terms of g star (g*) and u for bounded critical points, the matrix that must be inverted is **S**.\n\nThe passage states: \"the bounded critical points w\u0303* can be expressed as w\u0303* = g*S\u207b\u00b9u\"\n\nThis shows that S\u207b\u00b9 (S inverse) appears in the equation.",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that matrix S must be inverted, correctly citing the equation w\u0303* = g*S\u207b\u00b9u from the source passage without adding any fabricated details."
+    },
+    {
+      "eval_id": 50,
+      "question": "What type of structure do recurrent neural networks have that distinguishes them from recursive neural networks which operate on any hierarchical structure?",
+      "answer": "Based on the context passages provided, recurrent neural networks have **a linear chain structure** that distinguishes them from recursive neural networks which operate on any hierarchical structure.\n\nAccording to passage [1]: \"They are in fact recursive neural networks with a particular structure: that of a linear chain. Whereas recursive neural networks operate on any hierarchical structure, combining child representations into parent representations, recurrent neural networks operate on the linear progression of time, combining the previous time step and a hidden representation into the representation for the current time step.\"\n\nThis is confirmed by passage [2], which states: \"A special case of recursive neural networks is the RNN whose structure corresponds to a linear chain.\"\n\n**Sources: Passages [1] and [2]**",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that recurrent neural networks have a linear chain structure that distinguishes them from recursive neural networks, which is directly supported by the source passage, and while it references a passage [2] not provided to us, the core answer from passage [1] is factually correct."
+    },
+    {
+      "eval_id": 83,
+      "question": "What happens to the principal components when all values of the first variable are multiplied by 100?",
+      "answer": "Based on passage [1]:\n\nWhen all values of the first variable are multiplied by 100, the first principal component will be almost the same as that variable, with a small contribution from the other variable, whereas the second component will be almost aligned with the second original variable.\n\nThis is in contrast to when variables are not scaled differently, where the cosines of rotation for the two variables with respect to the principal component will be equal.",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately captures the key information from the source passage about what happens when the first variable is multiplied by 100, and correctly contrasts this with the unscaled case mentioned in the source."
+    },
+    {
+      "eval_id": 6,
+      "question": "What are the three common groupings of modern transformer designs based on their optimization?",
+      "answer": "The context passages do not contain information about three common groupings of modern transformer designs based on their optimization. \n\nWhile passage [2] mentions some transformer variants like \"decoder-only\" (also called \"autoregressive\" or \"causal\") and \"encoder-decoder\" transformers, and passage [4] mentions \"Perceivers\" as a variant designed for multimodality, these discussions are not explicitly framed as \"three common groupings based on their optimization.\"",
+      "grade": "INCORRECT",
+      "reason": "The system claims the context passages do not contain information about the three common groupings, when in fact the source passage explicitly states the three groupings are \"encoder-only, decoder-only, and encoder-decoder variants\" based on their optimization for different tasks."
+    },
+    {
+      "eval_id": 9,
+      "question": "What is the approximate duration in milliseconds that one time step corresponds to in LSTM RNN speech recognition tasks?",
+      "answer": "According to passage [1], one time step corresponds to about **10 ms (milliseconds)** in LSTM RNN speech recognition tasks.\n\nThe passage states: \"LSTM RNNs can learn 'Very Deep Learning' tasks that involve multi-second intervals containing speech events separated by thousands of discrete time steps, where one time step corresponds to about 10 ms.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that one time step corresponds to about 10 ms, which directly matches the information provided in the source passage, and includes an appropriate direct quote to support this claim."
+    },
+    {
+      "eval_id": 68,
+      "question": "In what year did a conditional GAN learn to generate 1000 image classes of ImageNet?",
+      "answer": "Based on passage [1], a conditional GAN learned to generate 1000 image classes of ImageNet in **2017**.",
+      "grade": "CORRECT",
+      "reason": "The system's answer correctly identifies 2017 as the year a conditional GAN learned to generate 1000 image classes of ImageNet, which matches the source passage exactly."
+    },
+    {
+      "eval_id": 12,
+      "question": "What does a random forest output for regression tasks according to this passage?",
+      "answer": "According to passage [1], for regression tasks, the output of a random forest is **the average of the predictions of the trees**.",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that for regression tasks, the random forest outputs the average of the predictions of the trees, which directly matches the information in the source passage."
+    },
+    {
+      "eval_id": 46,
+      "question": "What term is used to describe the minimal decision tree that a random forest can be transformed into while reproducing the same decision function?",
+      "answer": "Based on the context passages provided, the term used to describe the minimal decision tree that a random forest can be transformed into while reproducing the same decision function is **\"born-again\" decision tree**.\n\nThis is stated in passages [1] and [2]. Passage [2] specifically mentions: \"some model compression techniques allow transforming a random forest into a minimal 'born-again' decision tree that faithfully reproduces the same decision function.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies \"born-again\" decision tree as the term from the source passage and provides a correct direct quote supporting this answer."
+    },
+    {
+      "eval_id": 74,
+      "question": "Under what assumption can PCA be shown to be optimal for dimensionality reduction from an information-theoretic point-of-view?",
+      "answer": "Based on the context passages provided:\n\nPCA can be shown to be optimal for dimensionality reduction from an information-theoretic point-of-view under the following assumptions:\n\n1. **The data vector is the sum of signal and noise**: The assumption that **x = s + n**, where the data vector **x** is the sum of the desired information-bearing signal **s** and a noise signal **n** [Passage 1]\n\n2. **Specific distributional assumptions**: More specifically, PCA is optimal when **s is Gaussian and n is Gaussian noise with a covariance matrix proportional to the identity matrix**. Under these conditions, PCA maximizes the mutual information between the desired information **s** and the dimensionality-reduced output **y** [Passage 2]\n\nI used passages [1] and [2] to answer this question.",
+      "grade": "INCORRECT",
+      "reason": "The system's answer includes fabricated details about Gaussian distributions and covariance matrices (point 2) that are not mentioned in the provided source passage, which only states the x = s + n assumption."
+    },
+    {
+      "eval_id": 7,
+      "question": "In what domain does the unsupervised CNN model with 1-D convolutions detect anomalies after processing time series in the frequency domain using spectral residual?",
+      "answer": "Based on passage [1], the unsupervised CNN model with 1-D convolutions detects anomalies **in the time domain** after processing time series in the frequency domain using spectral residual.\n\nThe passage states: \"A CNN with 1-D convolutions was used on time series in the frequency domain (spectral residual) by an unsupervised model to detect anomalies in the time domain.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that anomalies are detected in the time domain, which directly matches the source passage's statement \"to detect anomalies in the time domain.\""
+    },
+    {
+      "eval_id": 64,
+      "question": "According to the passage, who explains that axioms in social choice theory can be used to construct convincing explanations to solutions?",
+      "answer": "According to passage [2], **Ariel D. Procaccia** explains that axioms in social choice theory can be used to construct convincing explanations to the solutions.",
+      "grade": "CORRECT",
+      "reason": "The system's answer correctly identifies Ariel D. Procaccia as the person who explains that axioms in social choice theory can be used to construct convincing explanations to solutions, which directly matches the source passage."
+    },
+    {
+      "eval_id": 27,
+      "question": "In the variance reduction formula for a node N, what do the symbols S_t and S_f represent?",
+      "answer": "Based on passage [1], in the variance reduction formula for a node N, **S_t represents the set of sample indices for which the split test is true, and S_f represents the set of sample indices for which the split test is false**.\n\nThe passage explicitly states: \"where S, S_t, and S_f are the set of presplit sample indices, set of sample indices for which the split test is true, and set of sample indices for which the split test is false, respectively.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that S_t represents the set of sample indices for which the split test is true and S_f represents the set of sample indices for which the split test is false, which directly matches the definitions provided in the source passage."
+    },
+    {
+      "eval_id": 4,
+      "question": "In the random forest weight function formula, what mathematical constraint must the weights for points x\u1d62 satisfy for any given x'?",
+      "answer": "Based on the context passages provided, the mathematical constraint that the weights must satisfy for any given x' is:\n\n**The weights for points x\u1d62 must sum to 1.**\n\nThis is explicitly stated in passages [1] and [4]. Passage [1] states: \"For any x', the weights for points x i must sum to 1.\" Passage [4] similarly states: \"For any x', the weights for points x i must sum to 1.\"\n\nAdditionally, passage [4] specifies that the weights W(x\u1d62, x') are \"non-negative.\"\n\n**Answer: For any x', the sum of all weights W(x\u1d62, x') must equal 1 (and the weights are non-negative).**\n\nCitations: Passages [1] and [4]",
+      "grade": "CORRECT",
+      "reason": "The system's answer correctly identifies that the weights must sum to 1 for any x' and appropriately includes the non-negative constraint, both of which are explicitly stated in the source passage."
+    },
+    {
+      "eval_id": 11,
+      "question": "In a fully recurrent neural network, what method is used to simulate the lack of connections between neurons?",
+      "answer": "Based on passage [1], in a fully recurrent neural network, **setting some connection weights to zero** is the method used to simulate the lack of connections between neurons.\n\nPassage [1] states: \"This is the most general neural network topology, because all other topologies can be represented by setting some connection weights to zero to simulate the lack of connections between those neurons.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that setting connection weights to zero is the method used to simulate lack of connections, which directly matches the information stated in the source passage."
+    },
+    {
+      "eval_id": 55,
+      "question": "According to the passage, what happens to the accuracy of probabilistic language models as they become larger?",
+      "answer": "According to passage [1], as probabilistic language models become larger, they become more accurate. \n\nThe passage states: \"the larger such a (probabilistic) language model is, the more accurate it becomes, in contrast to rule-based systems that can gain accuracy only by increasing the amount and complexity of the rules leading to intractability problems.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that probabilistic language models become more accurate as they become larger, which directly matches the information in the source passage, and includes a relevant supporting quote."
+    },
+    {
+      "eval_id": 53,
+      "question": "According to this passage, what are the three concepts that Model Functionality focuses on to clarify specific outputs or instances?",
+      "answer": "According to passage [1], the three concepts that Model Functionality focuses on to clarify specific outputs or instances are:\n\n1. Textual descriptions\n2. Visualization\n3. Local explanations\n\nThe passage explicitly states: \"Model Functionality focuses on textual descriptions, visualization, and local explanations, which clarify specific outputs or instances rather than entire models.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies all three concepts (textual descriptions, visualization, and local explanations) exactly as stated in the source passage, with an appropriate supporting quote."
+    },
+    {
+      "eval_id": 8,
+      "question": "What does the relationship between the error term and the regressors determine in formulating a linear regression model?",
+      "answer": "Based on passage [1], the relationship between the error term and the regressors (for example their correlation) determines **the appropriate estimation method** in formulating a linear regression model.\n\nPassage [1] states: \"The relationship between the error term and the regressors, for example their correlation, is a crucial consideration in formulating a linear regression model, as it will determine the appropriate estimation method.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that the relationship between the error term and regressors determines \"the appropriate estimation method,\" which directly matches the source passage, and correctly quotes the relevant text."
+    },
+    {
+      "eval_id": 30,
+      "question": "In a stacked RNN architecture, what is used as the input sequence to each layer above the current layer?",
+      "answer": "Based on the context passages provided:\n\nIn a stacked RNN architecture, **each layer's output sequence is used as the input sequence to the layer above**.\n\nThis answer comes from **Passage [1]**, which explicitly states: \"each layer's output sequence is used as the input sequence to the layer above.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer directly quotes and accurately reflects the information stated in the source passage without adding any fabricated details."
+    },
+    {
+      "eval_id": 85,
+      "question": "According to the passage, what happens to the signal-to-noise ratio in the first few principal components compared to later ones?",
+      "answer": "According to the passages, the **first few principal components achieve a higher signal-to-noise ratio** compared to later ones.\n\nPassage [1] states: \"the first few components achieve a higher signal-to-noise ratio. PCA thus can have the effect of concentrating much of the signal into the first few principal components, which can usefully be captured by dimensionality reduction; while the later principal components may be dominated by noise.\"\n\nPassage [2] similarly states: \"the first few components achieve a higher signal-to-noise ratio.\"\n\nPassage [3] reinforces this by noting that \"the later principal components may be dominated by noise, and so disposed of without great loss.\"\n\n**I used passages [1], [2], and [3].**",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that the first few principal components achieve a higher signal-to-noise ratio compared to later ones, which is directly supported by the source passage, though it unnecessarily references multiple passages when only one source was provided."
+    },
+    {
+      "eval_id": 70,
+      "question": "What is the perceptron of optimal stability equivalently known as?",
+      "answer": "Based on the context passages provided, the perceptron of optimal stability is equivalently known as the **maximum-margin classifier** (or it defines the **maximum-margin hyperplane**).\n\nThis information is found in passages [1] and [2], which both state that the maximum-margin classifier is \"equivalently, the perceptron of optimal stability.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that the perceptron of optimal stability is equivalently known as the maximum-margin classifier (and mentions the maximum-margin hyperplane), which directly matches the information in the source passage."
+    },
+    {
+      "eval_id": 54,
+      "question": "According to the passage, what types of machine learning is transfer learning related to due to its use of training with multiple objective functions?",
+      "answer": "According to passage [1], transfer learning is related to **cost-sensitive machine learning and multi-objective optimization** due to its use of training with multiple objective functions.\n\nThe passage states: \"Since transfer learning makes use of training with multiple objective functions it is related to cost-sensitive machine learning and multi-objective optimization.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies both types of machine learning (cost-sensitive machine learning and multi-objective optimization) and correctly quotes the relevant portion of the passage without adding any fabricated information."
+    },
+    {
+      "eval_id": 89,
+      "question": "In whose theory can the explanation of the forest method's resistance to overtraining be found?",
+      "answer": "Based on the context passages provided, the explanation of the forest method's resistance to overtraining can be found in **Kleinberg's theory of stochastic discrimination**.\n\nThis answer is found in passages [1] and [2], which both explicitly state: \"The explanation of the forest method's resistance to overtraining can be found in Kleinberg's theory of stochastic discrimination.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer correctly identifies Kleinberg's theory of stochastic discrimination as the source of explanation for the forest method's resistance to overtraining, which matches the source passage exactly."
+    },
+    {
+      "eval_id": 72,
+      "question": "What is the formula for converting the signal to noise ratio X to decibels according to this passage?",
+      "answer": "According to passage [1], the formula for converting the signal to noise ratio X to decibels is:\n\n**X_dB = 10 log\u2081\u2080 X**\n\nwhere X is the signal to noise ratio (not in decibels) and X_dB is the converted value in decibels.",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately reproduces the formula X_dB = 10 log\u2081\u2080 X from the source passage and correctly explains that X is the signal to noise ratio not in decibels and X_dB is the converted value in decibels."
+    },
+    {
+      "eval_id": 15,
+      "question": "What time period did the analysis contrasting GMM and other generative speech models versus deep learning systems take place?",
+      "answer": "Based on the context passages provided, the analysis contrasting GMM (and other generative speech models) versus deep learning (DNN) systems took place **around 2009-2010**.\n\nThis is stated in passages [1] and [2], which both mention: \"Analysis around 2009\u20132010, contrasting the GMM (and other generative speech models) vs. DNN models, stimulated early industrial investment in deep learning for speech recognition.\"\n\n**Citations: Passages [1] and [2]**",
+      "grade": "CORRECT",
+      "reason": "The system correctly identifies the time period as \"around 2009-2010\" which matches the source passage exactly, and while it mentions additional context about DNN models and industrial investment that isn't in the provided source passage, this appears to be from other passages it references and doesn't contradict the given source."
+    },
+    {
+      "eval_id": 28,
+      "question": "According to the passage, what are the two main ways to enforce sparsity in sparse autoencoders?",
+      "answer": "Based on passages [1], [2], and [3], the two main ways to enforce sparsity in sparse autoencoders are:\n\n1. **Clamping activations (k-sparse autoencoder)**: Simply clamp all but the highest-k activations of the latent code to zero. This approach keeps only the top k activations and sets the rest to zero.\n\n2. **Sparsity regularization loss**: A relaxed version where instead of forcing sparsity, a sparsity regularization loss is added to the optimization objective, optimizing for min \u03b8,\u03c6 L(\u03b8,\u03c6) + \u03bbL_sparse(\u03b8,\u03c6), where \u03bb > 0 measures how much sparsity to enforce.\n\nI used passages [1], [2], and [3] to answer this question.",
+      "grade": "PARTIALLY_CORRECT",
+      "reason": "The system correctly identifies the first method (clamping all but the highest-k activations to zero), but fabricates the second method about \"sparsity regularization loss\" which is not mentioned in the source passage that only states \"There are two main ways to enforce sparsity\" but only describes one of them."
+    },
+    {
+      "eval_id": 77,
+      "question": "In the social sciences, what is ROC analysis often called?",
+      "answer": "According to passage [1], in the social sciences, ROC analysis is often called the **ROC Accuracy Ratio**, which is described as a common technique for judging the accuracy of default probability models.",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately states that ROC analysis is called the \"ROC Accuracy Ratio\" in the social sciences and correctly includes the additional detail about it being used for judging the accuracy of default probability models, all of which matches the source passage."
+    },
+    {
+      "eval_id": 97,
+      "question": "In the example about measuring a ball being tossed in the air, what variable notation is used to represent the heights of ascent?",
+      "answer": "Based on the context passages provided, the variable notation used to represent the heights of ascent in the example about measuring a ball being tossed in the air is **hi** (h with subscript i).\n\nThis is stated in passages [1] and [2]. Passage [1] says \"we measure its heights of ascent hi at various moments in time ti.\" Passage [2] confirms this notation in the equation: \"h_i = \u03b2\u2081t_i + \u03b2\u2082t_i\u00b2 + \u03b5_i\"",
+      "grade": "PARTIALLY_CORRECT",
+      "reason": "The answer correctly identifies \"hi\" as the notation for heights of ascent from the source passage, but it references \"passages [1] and [2]\" and cites an equation that are not present in the provided source passage, constituting fabricated details about the source material."
+    },
+    {
+      "eval_id": 95,
+      "question": "In the illustrative example using the sentence \"my dog is cute\", which numbered token position is randomly picked to demonstrate the masking process?",
+      "answer": "Based on the context passages provided, the **4th token position** is randomly picked to demonstrate the masking process in the illustrative example using the sentence \"my dog is cute\".\n\nPassage [1] states: \"Then a random token in the sentence would be picked. Let it be the 4th one 'cute4'.\"\n\nThis is confirmed in passage [2], which continues the same example.\n\n**Citations: Passages [1] and [2]**",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies that the 4th token position (\"cute4\") is randomly picked in the illustrative example, which directly matches the information stated in the source passage."
+    },
+    {
+      "eval_id": 90,
+      "question": "What metric is usually used to evaluate language models due to their tendency to overfit to training data?",
+      "answer": "Based on the context provided, **perplexity** is the metric usually used to evaluate language models due to their tendency to overfit to training data.\n\nThis answer comes from **Passage [1]**, which states: \"models may overfit to training data, models are usually evaluated by their perplexity on a test set.\"",
+      "grade": "CORRECT",
+      "reason": "The system's answer accurately identifies perplexity as the evaluation metric mentioned in the source passage and correctly quotes the relevant text supporting this answer."
+    }
+  ]
+}

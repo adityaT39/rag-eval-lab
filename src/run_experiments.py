@@ -12,12 +12,13 @@ positions are stable across configs because they index into the same
 underlying normalized document text -- see chunk.py.
 """
 import json
+from chunk import build_chunks
 from pathlib import Path
 
 from sentence_transformers import CrossEncoder
 
-from chunk import build_chunks
 from embed_store import build_collection, retrieve
+from scoring import build_offset_map, recall_at_k, reciprocal_rank
 
 EVAL_DIR = Path(__file__).resolve().parent.parent / "eval"
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
@@ -39,29 +40,6 @@ def rerank(query: str, results: list[dict], top_k: int) -> list[dict]:
     scores = reranker.predict(pairs)
     ranked = sorted(zip(results, scores), key=lambda x: x[1], reverse=True)
     return [r for r, _ in ranked][:top_k]
-
-
-def spans_overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> bool:
-    return max(a_start, b_start) < min(a_end, b_end)
-
-
-def is_hit(chunk_id: str, offset_map: dict, expected_doc_id: str, expected_start: int, expected_end: int) -> bool:
-    entry = offset_map.get(chunk_id)
-    if entry is None:
-        return False
-    doc_id, start, end = entry
-    return doc_id == expected_doc_id and spans_overlap(start, end, expected_start, expected_end)
-
-
-def recall_at_k(retrieved_ids: list[str], offset_map: dict, expected_doc_id: str, expected_start: int, expected_end: int) -> int:
-    return 1 if any(is_hit(cid, offset_map, expected_doc_id, expected_start, expected_end) for cid in retrieved_ids) else 0
-
-
-def reciprocal_rank(retrieved_ids: list[str], offset_map: dict, expected_doc_id: str, expected_start: int, expected_end: int) -> float:
-    for rank, cid in enumerate(retrieved_ids, start=1):
-        if is_hit(cid, offset_map, expected_doc_id, expected_start, expected_end):
-            return 1.0 / rank
-    return 0.0
 
 
 def evaluate_config(collection_name: str, embed_model: str, eval_set: list[dict], offset_map: dict, ground_truth: dict,
@@ -93,10 +71,6 @@ def evaluate_config(collection_name: str, embed_model: str, eval_set: list[dict]
         "mrr": sum(mrrs) / len(mrrs),
         "n": len(recalls),
     }
-
-
-def build_offset_map(chunks: list[dict]) -> dict:
-    return {c["chunk_id"]: (c["doc_id"], c["start_char"], c["end_char"]) for c in chunks}
 
 
 def main():

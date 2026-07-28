@@ -8,7 +8,7 @@ from pathlib import Path
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
-from answer import answer_question  # noqa: E402
+from answer import answer_question
 
 st.set_page_config(page_title="RAG Eval Lab", page_icon="🔎")
 st.title("🔎 RAG Eval Lab")
