@@ -237,6 +237,41 @@ results/                    # experiment metrics (json + markdown table)
   API key needed) — chosen so the retrieval half of the pipeline has zero
   external cost or dependency. Only the answer-generation and eval-question
   generation steps call the Claude API.
+- The LLM-as-judge grades in `evaluate_answers.py` are **not currently
+  human-validated** — unlike the eval questions, which went through a full
+  human review pass. This is a known asymmetry in the project's rigor (see
+  Future Work below).
+
+## Future Work
+
+Ranked by how much each would actually strengthen the findings, not just
+add surface area:
+
+1. **A paraphrased eval set.** The BM25-ties-embeddings finding above is
+   explained by the eval questions sharing literal vocabulary with the
+   source text (since an LLM generated them by reading it directly). That
+   explanation is asserted, not tested. A second eval set of hand-paraphrased
+   questions — same facts, different words — would test whether embeddings
+   actually pull ahead on more naturalistic queries, instead of just
+   claiming they would.
+2. **Human-validate a sample of the LLM-judge's grades.** The eval
+   *questions* got a full human review pass; the answer-quality *grades*
+   currently don't get the same scrutiny. Spot-checking judge output against
+   human judgment would close that asymmetry.
+3. **Hybrid retrieval** (BM25 + embeddings via reciprocal rank fusion) — the
+   natural next experiment given that the two approaches currently tie.
+4. **Compare multiple embedding models head-to-head** — only one embedding
+   model is used throughout; "this is the best choice" isn't yet backed by
+   a comparison.
+5. **Latency / cost benchmarking** (p50/p95 per query) — current results
+   are correctness-only; a production system also needs to know what
+   quality costs in time and money.
+6. **Confidence intervals on the metrics** — differences like 90% vs 97%
+   recall on n=100 questions should be checked for statistical
+   significance (e.g. via bootstrap), not read as precise.
+7. Retry/backoff around Claude API calls, a scale test at 10x corpus size,
+   and a cross-domain eval (non-ML corpus) to check the findings aren't
+   specific to this topic.
 
 ## Stack
 
