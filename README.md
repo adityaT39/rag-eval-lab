@@ -57,13 +57,25 @@ Retrieval run against reviewed questions → Recall@5, MRR (run_experiments.py)
 **TL;DR / key takeaways:**
 - **Reranking was the single biggest lever** — 90% → 97% recall@5 just from
   adding a cross-encoder rerank step on top of embedding retrieval.
-- **Surprise: a plain keyword-search baseline (BM25) tied the fancy
-  embedding+reranker pipeline** (97% recall@5 either way). Not a knock on
-  embeddings — it's because this eval set's questions were generated
-  directly from the source text, so they share literal vocabulary with the
-  answer. It's a real limitation of the eval methodology, disclosed here
-  rather than buried, and it means the embedding advantage would likely
-  widen on more naturalistic, paraphrased queries.
+- **Surprise, then confirmed by a follow-up experiment: BM25 ties embeddings
+  on lexically-aligned questions, then collapses on paraphrased ones.** The
+  original eval questions were LLM-generated directly from the source text,
+  so they shared its literal vocabulary — and on those, keyword search (BM25)
+  tied the reranked embedding pipeline (97% recall@5 either way). Rather than
+  just asserting embeddings "would do better" on more natural queries, I
+  built a second eval set of hand-paraphrased questions (same facts,
+  deliberately different words — average question/source word overlap
+  dropped from 0.22 to 0.09) and reran both retrievers:
+
+  | | Original (lexically-aligned) | Paraphrased (naturalistic) |
+  |---|---|---|
+  | BM25 | 97% recall@5 | **19%** recall@5 |
+  | Embeddings + reranker | 97% recall@5 | **54%** recall@5 |
+
+  BM25 collapses once queries stop reusing the source's exact words;
+  embeddings degrade too (paraphrasing makes the task genuinely harder for
+  everyone) but hold up ~2.8x better. This is the actual point of using
+  semantic search — and now it's a tested number, not a claim.
 - **Finding the right passage isn't the same as answering correctly.**
   Retrieval hit 97% recall, but grading the actual generated answers
   (LLM-as-judge) put accuracy at 83.3% strict / 93.3% lenient — a
@@ -108,18 +120,20 @@ below for why.
    pipeline: recall@5 90% → 97%, MRR 0.803 → 0.965. Cross-encoders score the
    query and passage jointly (rather than comparing precomputed independent
    vectors), which is slower per-query but substantially more accurate.
-3. **BM25 keyword-search baseline** — the honest finding here: a classic
-   keyword-matching retriever (`rank_bm25`, no embeddings, no ML) scores
-   essentially the same as the reranked embedding pipeline (97% recall@5,
-   0.942 vs 0.965 MRR). This isn't a failure of the embedding approach — it's
-   a property of this eval set: the questions were generated directly from
-   source passages, so they tend to share literal vocabulary with the answer
-   (e.g. asking "what does RU-IRL assume..." when the passage itself uses
-   "RU-IRL"). BM25 is unusually strong on this kind of lexically-aligned
-   question. On paraphrased, naturalistic user queries — which don't
-   reliably reuse the source's exact words — the embedding+reranker approach
-   would be expected to pull further ahead. Worth stating plainly rather
-   than only reporting the numbers that flatter the fancier system.
+3. **BM25 keyword-search baseline, then a paraphrase follow-up** — a classic
+   keyword-matching retriever (`rank_bm25`, no embeddings, no ML) initially
+   scored essentially the same as the reranked embedding pipeline (97%
+   recall@5, 0.942 vs 0.965 MRR). Rather than stop there, I tested *why*:
+   the eval questions were generated directly from source passages, so they
+   shared literal vocabulary with the answer (e.g. asking "what does RU-IRL
+   assume..." when the passage itself uses "RU-IRL"). I built a second eval
+   set of hand-paraphrased questions (`generate_paraphrased_eval.py`,
+   average question/source word overlap 0.22 → 0.09) and reran both
+   retrievers (`compare_eval_sets.py`). Result: BM25 collapsed to 19%
+   recall@5, while embeddings+reranker held at 54% — a ~2.8x gap that only
+   shows up once queries stop reusing the source's exact words. See
+   [`results/paraphrase_comparison.md`](results/paraphrase_comparison.md)
+   for the full table.
 4. **Answer-quality (LLM-as-judge), not just retrieval** — retrieval metrics
    only prove the right passage was *found*, not that the final answer is
    *correct*. Sampled 30 questions, ran them through the full pipeline, and
@@ -182,10 +196,18 @@ python src/bm25_baseline.py
 # 7. Grade actual generated answers (not just retrieval) via LLM-as-judge
 python src/evaluate_answers.py
 
-# 8. Ask questions through the full RAG pipeline
+# 8. Generate a paraphrased eval set (tests whether BM25's tie with
+#    embeddings is just an artifact of lexically-aligned questions)
+python src/generate_paraphrased_eval.py
+
+# 9. Compare BM25 vs embeddings+reranker on both the original and
+#    paraphrased eval sets
+python src/compare_eval_sets.py
+
+# 10. Ask questions through the full RAG pipeline
 python src/answer.py "What is the vanishing gradient problem?"
 
-# 9. Or launch the interactive demo
+# 11. Or launch the interactive demo
 streamlit run app.py
 ```
 
@@ -216,6 +238,8 @@ src/
   run_experiments.py       # chunk-size / reranker experiments + metrics
   bm25_baseline.py         # keyword-search baseline for comparison
   evaluate_answers.py      # LLM-as-judge grading of generated answers
+  generate_paraphrased_eval.py  # paraphrased eval set (tests lexical-overlap hypothesis)
+  compare_eval_sets.py     # BM25 vs embeddings on original vs paraphrased queries
   answer.py                 # end-to-end grounded QA with citations
 app.py                      # Streamlit demo UI
 tests/                      # pytest unit tests for chunk.py / scoring.py
@@ -247,31 +271,29 @@ results/                    # experiment metrics (json + markdown table)
 Ranked by how much each would actually strengthen the findings, not just
 add surface area:
 
-1. **A paraphrased eval set.** The BM25-ties-embeddings finding above is
-   explained by the eval questions sharing literal vocabulary with the
-   source text (since an LLM generated them by reading it directly). That
-   explanation is asserted, not tested. A second eval set of hand-paraphrased
-   questions — same facts, different words — would test whether embeddings
-   actually pull ahead on more naturalistic queries, instead of just
-   claiming they would.
-2. **Human-validate a sample of the LLM-judge's grades.** The eval
-   *questions* got a full human review pass; the answer-quality *grades*
-   currently don't get the same scrutiny. Spot-checking judge output against
-   human judgment would close that asymmetry.
-3. **Hybrid retrieval** (BM25 + embeddings via reciprocal rank fusion) — the
-   natural next experiment given that the two approaches currently tie.
-4. **Compare multiple embedding models head-to-head** — only one embedding
-   model is used throughout; "this is the best choice" isn't yet backed by
-   a comparison.
-5. **Latency / cost benchmarking** (p50/p95 per query) — current results
-   are correctness-only; a production system also needs to know what
-   quality costs in time and money.
-6. **Confidence intervals on the metrics** — differences like 90% vs 97%
-   recall on n=100 questions should be checked for statistical
-   significance (e.g. via bootstrap), not read as precise.
-7. Retry/backoff around Claude API calls, a scale test at 10x corpus size,
-   and a cross-domain eval (non-ML corpus) to check the findings aren't
-   specific to this topic.
+- [x] **A paraphrased eval set.** Confirmed the hypothesis: BM25 collapses
+  to 19% recall@5 on naturalistic queries while embeddings+reranker holds
+  at 54%, a gap that was invisible on the original lexically-aligned eval
+  set. See the comparison table above.
+- [ ] **Human-validate a sample of the LLM-judge's grades.** The eval
+  *questions* got a full human review pass; the answer-quality *grades*
+  currently don't get the same scrutiny. Spot-checking judge output against
+  human judgment would close that asymmetry.
+- [ ] **Hybrid retrieval** (BM25 + embeddings via reciprocal rank fusion) —
+  now clearly worth doing given the paraphrase results: BM25 and embeddings
+  fail on different query types, so combining them should beat either alone.
+- [ ] **Compare multiple embedding models head-to-head** — only one
+  embedding model is used throughout; "this is the best choice" isn't yet
+  backed by a comparison.
+- [ ] **Latency / cost benchmarking** (p50/p95 per query) — current results
+  are correctness-only; a production system also needs to know what
+  quality costs in time and money.
+- [ ] **Confidence intervals on the metrics** — differences like 90% vs 97%
+  recall on n=100 questions should be checked for statistical
+  significance (e.g. via bootstrap), not read as precise.
+- [ ] Retry/backoff around Claude API calls, a scale test at 10x corpus
+  size, and a cross-domain eval (non-ML corpus) to check the findings
+  aren't specific to this topic.
 
 ## Stack
 

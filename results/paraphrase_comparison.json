@@ -1,0 +1,22 @@
+{
+  "bm25__original": {
+    "recall@5": 0.97,
+    "mrr": 0.9420000000000001,
+    "n": 100
+  },
+  "embed_rerank__original": {
+    "recall@5": 0.97,
+    "mrr": 0.965,
+    "n": 100
+  },
+  "bm25__paraphrased": {
+    "recall@5": 0.19,
+    "mrr": 0.13033333333333333,
+    "n": 100
+  },
+  "embed_rerank__paraphrased": {
+    "recall@5": 0.54,
+    "mrr": 0.354,
+    "n": 100
+  }
+}
