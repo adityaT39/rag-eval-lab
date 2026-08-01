@@ -248,6 +248,54 @@ eval/                       # generated + reviewed eval sets
 results/                    # experiment metrics (json + markdown table)
 ```
 
+## Deep dive: what each file does and why
+
+- **`src/ingest.py`** — downloads the ~50 Wikipedia ML/AI articles and a
+  manifest listing them. The raw material everything downstream is built on.
+- **`src/chunk.py`** — splits each article into overlapping chunks on
+  sentence boundaries, and records each chunk's exact `(start_char,
+  end_char)` position in the source document. Chunk size is one of the two
+  things this project deliberately experiments with (see Results); recording
+  character spans rather than relying on chunk IDs is also what makes the
+  fix described below possible.
+- **`src/embed_store.py`** — embeds chunks with a free, local model
+  (`all-MiniLM-L6-v2`, no API key needed) and stores them in a Chroma
+  collection per experiment configuration, so different chunk-size runs
+  don't contaminate each other.
+- **`src/scoring.py`** — pure, zero-ML-dependency scoring logic: a retrieval
+  "hit" is judged by character-span overlap with the ground-truth passage,
+  not chunk-ID equality (chunk IDs shift when chunk size changes; character
+  positions don't). This is what makes it unit-testable and fast in CI, and
+  it's the fix for the bug described below.
+- **`src/generate_eval_set.py` / `review_eval_set.py`** — the former samples
+  chunks and has Claude write a plausible question per chunk; the latter is
+  a small CLI for manually reviewing/approving each one before it's trusted.
+  LLM-generated-then-human-reviewed eval questions are a real, commonly used
+  technique (similar to tools like RAGAS) — disclosed here rather than
+  presented as a fully hand-written eval set.
+- **`src/run_experiments.py`** — runs the chunk-size (250/500/1000) and
+  reranking (on/off) experiments, scoring each against the reviewed eval
+  set. Also contains the reranking logic: a cross-encoder re-scores a pool
+  of 20 candidates before keeping the top 5.
+- **`src/bm25_baseline.py`** — the same evaluation run with BM25 (keyword
+  matching, no embeddings) as a point of comparison — without it, "97%
+  recall" has no context for whether the embedding pipeline is earning its
+  complexity.
+- **`src/generate_paraphrased_eval.py` / `compare_eval_sets.py`** — a
+  second eval set that asks the same facts in deliberately different words,
+  built specifically to test *why* BM25 initially tied the embedding
+  pipeline (see Results).
+- **`src/evaluate_answers.py`** — samples 30 questions, runs them through the
+  full pipeline, and has Claude grade the generated answer against the known-
+  correct passage. Recall@k only proves the right passage was found; this is
+  what checks whether the final answer is actually correct.
+- **`src/answer.py`** — the end-to-end path a real user hits: retrieve,
+  optionally rerank, then ask Claude to answer strictly from the retrieved
+  context with citations. Everything else in this project exists to justify
+  trusting this file's output.
+- **`app.py`** — a Streamlit UI for demoing the pipeline interactively rather
+  than only from the command line.
+
 ## Honest notes on methodology
 
 - The eval set is **LLM-generated, then human-reviewed** — a real and
